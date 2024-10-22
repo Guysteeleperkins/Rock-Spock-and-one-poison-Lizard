@@ -23,123 +23,118 @@ function actionReport(playerChoice, compChoice) {
     return(outcome[0]);
 }
 
+/**
+ * Function to determine match result if player chooses rock. 
+ * Uses a switch statement and takes compChoice as input.
+ */
+function choseRock(compChoice) {
+  switch (compChoice) {
+    case "rock":
+      return 'draw';
+
+    case "scissors":
+    case "lizard":
+      return 'win';
+
+    case "paper":
+    case "spock":
+      return 'lose';
+  }
+}
+
+/**
+ * Function to determine match result if player chooses paper. 
+ * Uses a switch statement and takes compChoice as input.
+ */
+function chosePaper(compChoice) {
+  switch (compChoice) {
+    case "paper":
+      return 'draw';
+
+    case "rock":
+    case "spock":
+      return 'win';
+
+    case "scissors":
+    case "lizard":
+      return 'lose';
+  }
+}
+
+/**
+ * Function to determine match result if player chooses scissors. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseScissors(compChoice) {
+  switch (compChoice) {
+    case "scissors":
+      return 'draw';
+
+    case "paper":
+    case "lizard":
+      return 'win';
+
+    case "rock":
+    case "spock":
+      return 'lose';
+  }
+}
+
+/**
+ * Function to determine match result if player chooses lizard. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseLizard(compChoice) {
+  switch (compChoice) {
+    case "lizard":
+      return 'draw';
+
+    case "paper":
+    case "spock":
+      return 'win';
+
+    case "rock":
+    case "scissors":
+      return 'lose';
+  }
+}
+
+/**
+ * Function to determine match result if player chooses spock. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseSpock(compChoice) {
+  switch (compChoice) {
+    case "spock":
+      return 'draw';
+
+    case "rock":
+    case "scissors":
+      return 'win';
+
+    case "paper":
+    case "lizard":
+      return 'lose';
+  }
+}
+
 
 /**
  * Calculates the match winner
  */
-// function matchOutcome() {}
+function calcWinner() {
+  
+}
 
-// switch (playerChoice) {
-//   case "rock":
-//     switch (compChoice) {
-//       case "rock":
-//         console.log("draw");
-//         break;
-//       case "paper":
-//       case "spock":
-//         console.log("lose");
-//         break;
-//       case "scissors":
-//       case "lizard":
-//         console.log("win");
-//     }
-//   case "paper":
+switch (playerChoice) {
+  case "rock":
+    choseRock();      
+    
+  case "paper":
 
-//   case "scissors":
+  case "scissors":
 
-//   case "lizard":
+  case "lizard":
 
-//   case "spock":
-// }
-
-// Wait for the DOM to finish loading before running the game
-
-// get button elements and add event listeners to them
-
-document.addEventListener("DOMContentLoaded", function () {
-    let buttons = document.getElementsByTagName("button");
-  
-    for (let button of buttons) {
-      button.addEventListener("click", function () {
-        let userChoice = this.getAttribute("data-type");
-        runGame(userChoice);
-      });
-    }
-  
-    document
-      .getElementById("answer-box")
-      .addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          checkAnswer();
-        }
-      });
-  });
-  
-  
-  function getComputerChoice() {
-      const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-      const randomChoice = Math.floor(Math.random() * choices.length);
-      return choices[randomChoice];
-  }
-  
-  function determineWinner(userChoice, computerChoice) {
-      if (userChoice === computerChoice) {
-          return 'Tie';
-      } 
-  
-      if (
-      (userChoice === 'rock' && computerChoice === 'scissors') ||
-      (userChoice === 'rock' && computerChoice === 'lizard') ||
-  
-      (userChoice === 'paper' && computerChoice === 'rock') ||
-      (userChoice === 'paper' && computerChoice === 'spock') ||
-  
-      (userChoice === 'scissors' && computerChoice === 'paper') ||
-      (userChoice === 'scissors' && computerChoice === 'lizard') ||
-  
-      (userChoice === 'lizard' && computerChoice === 'spock') ||
-      (userChoice === 'lizard' && computerChoice === 'paper') ||
-  
-      (userChoice === 'spock' && computerChoice === 'scissors') ||
-      (userChoice === 'spock' && computerChoice === 'rock') 
-      ) {
-          incrementWin()
-          return 'user'
-          
-      } else {
-          incrementLoss()
-          return 'computer'
-      }
-  }
-  
-  function runGame(userChoice) {
-      const computerChoice = getComputerChoice();
-      const result = determineWinner(userChoice, computerChoice);
-      console.log(userChoice);
-      console.log(computerChoice);
-      
-      // displayResult(userChoice, computerChoice, result);
-  
-  }
-  
-  /**
-   * Gets the current score from the DOM and increments it by 1
-   */
-  function incrementWin() {
-  
-      let win = parseInt(document.getElementById('win').innerText);
-      document.getElementById('win').textContent = ++win;
-  }
-  
-  /**
-   * Gets the current incorrect score from the DOM and increments it by 1
-   */
-  function incrementLoss() {
-  
-      let loss = parseInt(document.getElementById('loss').innerText);
-      document.getElementById('loss').textContent = ++loss;
-  }
-  
-  
-  
-  
+  case "spock":
+}
