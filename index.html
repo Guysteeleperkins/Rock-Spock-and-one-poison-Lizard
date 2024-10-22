@@ -21,17 +21,18 @@
 </head>
 
 <body>
-    <h1 class="heading">
+    <!-- <h1 class="heading">
         Spock and Roll
-    </h1>
+    </h1> -->
           <!-- PLayer "board" -->
     <div class="container-fluid">
             <div class="row game-area">
-                <div class="col-2 d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-2 d-flex flex-md-column justify-content-center align-items-center text-center">
                     <div class="avatar" id="player-avatar">
                     </div>
+                    <p class="scores">User Wins: <br><span id="win">0</span></p>
                 </div>
-                <div class="col-2 col-md-1 d-flex flex-column align-items-center" id="player-controls">
+                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="player-controls">
                     <button data-type="rock" class="btn btn--big btn--green">
                         <span class="btn-icon"><i class="fa-solid fa-hand-rock"></i></span>
                     </button>
@@ -48,12 +49,12 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </button>
                 </div>
-                <div class="col-4 col-md-6" id="game-display">
+                <div class="col-12 col-md-6" id="game-display">
                     <div class="game-table">
 
                     </div>
                 </div>
-                <div class="col-2 col-md-1 d-flex flex-column align-items-center" id="computer-controls">
+                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="computer-controls">
                     <div data-type="comp-rock" class="btn--big btn--green">
                         <i class="fa-solid fa-hand-rock"></i>
                     </div>
@@ -70,9 +71,10 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </div>
                 </div>
-                <div class="col-2 d-flex justify-content-center align-items-center">
-                    <div class="avatar" id="player-avatar">
+                <div class="col-12 col-md-2 d-flex flex-row-reverse flex-md-column justify-content-center align-items-center text-center">
+                    <div class="avatar" id="cplayer-avatar">
                     </div>
+                    <p class="scores">Comp Wins:<br><span id="loss">0</span></p>
                 </div>
             </div>
         </div>
@@ -106,10 +108,10 @@
         </div>
     </div> -->
 
-    <div class="score-area">
+    <!-- <div class="score-area">
         <p class="scores">User Wins <span id="win">0</span></p>
         <p class="scores">Computer Wins <span id="loss">0</span></p>
-    </div>
+    </div> -->
 
     <script src="https://kit.fontawesome.com/200607b541.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>

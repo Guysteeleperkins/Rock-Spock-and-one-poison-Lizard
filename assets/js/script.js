@@ -78,9 +78,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function getComputerChoice() {
       const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-      const randomChoice = Math.floor(Math.random() * choices.length);
-      return choices[randomChoice];
+      const randomChoice = choices[Math.floor(Math.random() * choices.length)];
+
+
+
+      return randomChoice;
   }
+
+
+
   
   function determineWinner(userChoice, computerChoice) {
       if (userChoice === computerChoice) {
@@ -114,10 +120,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function runGame(userChoice) {
       const computerChoice = getComputerChoice();
+
+      moveIcons(userChoice, computerChoice);
+
       const result = determineWinner(userChoice, computerChoice);
+
+      
+      setTimeout(function() { moveIcons(userChoice,computerChoice) }, 3000);
+
       console.log(userChoice);
       console.log(computerChoice);
-      
+
+
       // displayResult(userChoice, computerChoice, result);
   
   }
@@ -141,5 +155,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   
+
+
+
+
+  function moveIcons(userChoice, computerChoice) {
+    moveUserIcon(userChoice);
+    moveCompIcon(computerChoice);
+  }
+
+
   
-  
+  function moveUserIcon(userChoice) {
+    const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+    userIconElement.classList.toggle("user-icon-played");
+    userIconElement.classList.toggle(`${userChoice}-choice`);
+  }
+
+  function moveCompIcon(compChoice) {
+    const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+    compIconElement.classList.toggle("comp-icon-played");
+    compIconElement.classList.toggle(`${compChoice}-choice`);
+  }
