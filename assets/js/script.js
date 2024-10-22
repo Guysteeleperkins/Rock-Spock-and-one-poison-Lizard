@@ -1,6 +1,6 @@
 // Variables for storing player choice and computer choice
-let playerChoice;
-let compChoice;
+let playerChoice = "";
+let compChoice = "";
 
 /** 
  * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
@@ -16,10 +16,10 @@ function actionReport(playerChoice, compChoice) {
     "Lizard eats Paper!",
     "Lizard poisons Spock!",
     "Spock smashes Scissors!",
-    "Spock vaporizes Rock!",
+    "Spock vaporizes Rock!"
   ];
 
-  const outcome = action.filter((matchup) => matchup.includes(playerChoice) && matchup.includes(compChoice));
+  const outcome = action.filter((matchup) => matchup.toLowerCase().includes(playerChoice) && matchup.toLowerCase().includes(compChoice));
   return (outcome[0]);
 }
 
@@ -125,19 +125,19 @@ function choseSpock(compChoice) {
 function calcWinner(playerChoice, compChoice) {
   switch (playerChoice) {
     case "rock":
-      choseRock(compChoice);
-
+      return choseRock(compChoice);
+      
     case "paper":
-      chosePaper(compChoice);
+      return chosePaper(compChoice);
 
     case "scissors":
-      choseScissors(compChoice);
+      return choseScissors(compChoice);
 
     case "lizard":
-      choseLizard(compChoice);
+      return choseLizard(compChoice);
 
     case "spock":
-      choseSpock(compChoice);
+      return choseSpock(compChoice);
   }
 }
 
@@ -172,7 +172,24 @@ function compShoot() {
   return compChoice;
 }
 
+
+/**
+ * Runs game by calling all other needed functions in order
+ */
 function runGame(button) {
-  playerShoot(button);
-  compShoot();
+  const playerChoice = playerShoot(button);
+  const compChoice = compShoot();
+  let winLose = calcWinner(playerChoice, compChoice);
+
+  if (winLose === 'draw') {
+    console.log("It's a draw!");
+  } else if (winLose === 'win') {
+    console.log("Player wins!");
+  } else if (winLose === 'lose') {
+    console.log("Computer wins!");
+  } else {
+    console.log("You done messed up A-a-ron!");
+  }
+
+  console.log(actionReport(playerChoice, compChoice));
 }
