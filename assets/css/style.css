@@ -80,19 +80,6 @@ body {
 
 /* --------- Buttons */
 
-.btn {
-    width: 220px;
-    height: 60px;
-    font-family: "Raleway", sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: white;
-}
-
-.btn:focus {
-    outline: none;
-}
-
 .btn--big {
     border-radius: 50%;
     background-color: rgb(0, 0, 0);
@@ -102,15 +89,10 @@ body {
     font-size: 1.5rem;
     margin: 10px 0px;
     transition: all 0.5s;
-    text-align: center;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-.btn-icon {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-  }
 
 
 .btn--blue {
@@ -119,7 +101,8 @@ body {
 }
 
 .btn--blue:active,
-.btn--blue:hover {
+.btn--blue:hover,
+.paper-choice {
     background-color: darkblue;
     color: white;
 }
@@ -130,7 +113,8 @@ body {
 }
 
 .btn--orange:active,
-.btn--orange:hover {
+.btn--orange:hover,
+.scissors-choice {
     background-color: darkorange;
     color: white;
 }
@@ -141,7 +125,8 @@ body {
 }
 
 .btn--red:active,
-.btn--red:hover {
+.btn--red:hover,
+.lizard-choice {
     background-color: darkred;
     color: white;
 }
@@ -152,21 +137,22 @@ body {
 }
 
 .btn--green:active,
-.btn--green:hover {
+.btn--green:hover,
+.rock-choice {
     background-color: darkgreen;
     color: white;
 }
 
-.btn--gray {
-    margin-top: 25px;
-    background-color: #445361;
-    border: 1px transparent;
-    border-radius: 20px;
+.btn--purple {
+    border-color: #a7189f;
+    color: #a7189f;
 }
 
-.btn--gray:active,
-.btn--gray:hover {
-    background-color: #0d1013;
+.btn--purple:active,
+.btn--purple:hover,
+.spock-choice {
+    background-color: #a7189f;
+    color: #ffffff;
 }
 
 
@@ -179,40 +165,6 @@ body {
         width: 100%;
     }
 
-    .btn--big {
-        margin: 0 10px;
-        padding: 5px;
-        border: 5px solid;
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
-    }
-
-    .btn--big::after {
-        font-size: 0.6rem;
-        left: -0.7rem;
-    }
-
-    .question-area {
-        padding: 10% 0;
-        width: 100%;
-    }
-
-    .question-area span {
-        padding: 0;
-    }
-
-    .answer-message {
-        display: block;
-    }
-
-    #answer-box {
-        display: block;
-        margin: 0 auto;
-    }
-    .btn--gray {
-        margin-top: 0;
-    }
 
     .score-area {
         width: 100%;
@@ -233,17 +185,4 @@ body {
     .game-area {
         height: 70vh;
     }
-
-    .controls-area {
-        width: 75%;
-        margin: 10px auto;
-    }
-
-    .btn--big {
-        margin: 10px 10px;
-    }
-    .question-area {
-        padding: 10px 0;
-    }
-
 }
