@@ -19,8 +19,8 @@ function actionReport(playerChoice, compChoice) {
     "Spock vaporizes Rock!",
   ];
 
-    const outcome = action.filter((matchup) => matchup.includes(playerChoice) && matchup.includes(compChoice));
-    return(outcome[0]);
+  const outcome = action.filter((matchup) => matchup.includes(playerChoice) && matchup.includes(compChoice));
+  return (outcome[0]);
 }
 
 /**
@@ -122,19 +122,57 @@ function choseSpock(compChoice) {
 /**
  * Calculates the match winner
  */
-function calcWinner() {
-  
+function calcWinner(playerChoice, compChoice) {
+  switch (playerChoice) {
+    case "rock":
+      choseRock(compChoice);
+
+    case "paper":
+      chosePaper(compChoice);
+
+    case "scissors":
+      choseScissors(compChoice);
+
+    case "lizard":
+      choseLizard(compChoice);
+
+    case "spock":
+      choseSpock(compChoice);
+  }
 }
 
-switch (playerChoice) {
-  case "rock":
-    choseRock();      
-    
-  case "paper":
+// Adds event listener to buttons to call playerShoot on click, which returns the player's choice
+document.addEventListener("DOMContentLoaded", function () {
+  let buttons = document.getElementsByTagName("button");
 
-  case "scissors":
+  for (let button of buttons) {
+    button.addEventListener("click", function () {
+      runGame(this);
+    });
+  }
+});
 
-  case "lizard":
+/**
+ * Returns player's choice
+ */
+function playerShoot(button) {
+  let playerChoice = button.getAttribute("data-type");
+  console.log(`Player: ${playerChoice}`);
+  return playerChoice;
+}
 
-  case "spock":
+/**
+ * Returns computer's choice
+ */
+function compShoot() {
+  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  let choiceIndex = Math.floor(Math.random() * 5);
+  let compChoice = choices[choiceIndex];
+  console.log(`Computer: ${compChoice}`);
+  return compChoice;
+}
+
+function runGame(button) {
+  playerShoot(button);
+  compShoot();
 }
