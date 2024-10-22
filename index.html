@@ -1,17 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spock, Raper, Pizzers</title>
+
+    <!-- Font Awesome and google fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Spock and Roll</title>
 </head>
+
 <body>
-    <h1>Guy</h1>
-    <h2>Guys git merge test</h2>
-    <h2>Solara git merge test</h2>
-    <h1>Matt Rules</h1>
-    <h3>Guys branch test and merge to main (after merging main to Guy branch this h3 was added, I then need to commit this change and push it -> then create a pull request on GitHub)</h3>
-    <p>Pulling on github is harder than pulling at a WI meeting</p>
-    <h4>fnwiufgnwoirgnpwrngvpwnjgvqpirhgopierg</h4>
+    <h1 class="heading">
+        Spock and Roll
+    </h1>
+
+    <div class="game-area">
+        <div class="controls-area">
+            <button data-type="rock" class="btn btn--big btn--green">
+                <i class="fa-solid fa-hand-back-fist"></i>
+            </button>
+            <button data-type="paper" class="btn btn--big btn--blue">
+                <i class="fa-solid fa-toilet-paper"></i>
+            </button>
+            <button data-type="scissors" class="btn btn--big btn--orange">
+                <i class="fa-solid fa-scissors"></i>
+            </button>
+            <button data-type="lizard" class="btn btn--big btn--red">
+                <i class="fa-solid fa-dragon"></i>
+            </button>
+            <button data-type="spock" class="btn btn--big btn--red">
+                <i class="fa-solid fa-hand-spock"></i>
+            </button>
+        </div>
+        <div class="results-area">
+            <span id="winner"></span>
+            <!--
+            <span id="description"></span>
+            <span id="loser"></span>
+            --> 
+        </div>
+    </div>
+
+    <div class="score-area">
+        <p class="scores">User Wins <span id="win">0</span></p>
+        <p class="scores">Computer Wins <span id="loss">0</span></p>
+    </div>
+
+    <script src="https://kit.fontawesome.com/200607b541.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

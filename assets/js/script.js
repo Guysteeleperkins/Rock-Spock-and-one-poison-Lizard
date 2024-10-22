@@ -51,3 +51,95 @@ function actionReport(playerChoice, compChoice) {
 
 //   case "spock":
 // }
+
+// Wait for the DOM to finish loading before running the game
+
+// get button elements and add event listeners to them
+
+document.addEventListener("DOMContentLoaded", function () {
+    let buttons = document.getElementsByTagName("button");
+  
+    for (let button of buttons) {
+      button.addEventListener("click", function () {
+        let userChoice = this.getAttribute("data-type");
+        runGame(userChoice);
+      });
+    }
+  
+    document
+      .getElementById("answer-box")
+      .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          checkAnswer();
+        }
+      });
+  });
+  
+  
+  function getComputerChoice() {
+      const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+      const randomChoice = Math.floor(Math.random() * choices.length);
+      return choices[randomChoice];
+  }
+  
+  function determineWinner(userChoice, computerChoice) {
+      if (userChoice === computerChoice) {
+          return 'Tie';
+      } 
+  
+      if (
+      (userChoice === 'rock' && computerChoice === 'scissors') ||
+      (userChoice === 'rock' && computerChoice === 'lizard') ||
+  
+      (userChoice === 'paper' && computerChoice === 'rock') ||
+      (userChoice === 'paper' && computerChoice === 'spock') ||
+  
+      (userChoice === 'scissors' && computerChoice === 'paper') ||
+      (userChoice === 'scissors' && computerChoice === 'lizard') ||
+  
+      (userChoice === 'lizard' && computerChoice === 'spock') ||
+      (userChoice === 'lizard' && computerChoice === 'paper') ||
+  
+      (userChoice === 'spock' && computerChoice === 'scissors') ||
+      (userChoice === 'spock' && computerChoice === 'rock') 
+      ) {
+          incrementWin()
+          return 'user'
+          
+      } else {
+          incrementLoss()
+          return 'computer'
+      }
+  }
+  
+  function runGame(userChoice) {
+      const computerChoice = getComputerChoice();
+      const result = determineWinner(userChoice, computerChoice);
+      console.log(userChoice);
+      console.log(computerChoice);
+      
+      // displayResult(userChoice, computerChoice, result);
+  
+  }
+  
+  /**
+   * Gets the current score from the DOM and increments it by 1
+   */
+  function incrementWin() {
+  
+      let win = parseInt(document.getElementById('win').innerText);
+      document.getElementById('win').textContent = ++win;
+  }
+  
+  /**
+   * Gets the current incorrect score from the DOM and increments it by 1
+   */
+  function incrementLoss() {
+  
+      let loss = parseInt(document.getElementById('loss').innerText);
+      document.getElementById('loss').textContent = ++loss;
+  }
+  
+  
+  
+  
