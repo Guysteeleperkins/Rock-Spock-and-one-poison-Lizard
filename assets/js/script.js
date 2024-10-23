@@ -264,7 +264,8 @@ function moveCompIcon(compChoice) {
 // Other code not essential to the game logic
 // This is for code that improves the user experience but which doesn't belong in Flavour Functions
 
-
+/* Listens for page load
+ * Plays landing sting audio*/
 window.addEventListener("load", (event) => {
   let audio = document.getElementById("landing-sting");
   audio.play();
