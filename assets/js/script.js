@@ -221,37 +221,7 @@ window.addEventListener("load", (event) => {
 
 
 
-/**
- * Runs game by calling all other needed functions in order
- */
-function runGame(button) {
-  const playerChoice = playerShoot(button);
-  const compChoice = compShoot();
 
-  moveIcons(playerChoice, compChoice);
-
-  console.log(actionReport(playerChoice, compChoice));
-  
-  let winLose = calcWinner(playerChoice, compChoice);
-
-  setTimeout(function () {
-    moveIcons(playerChoice, compChoice)
-  }, 3000);
-
-  if (winLose === 'draw') {
-    console.log("It's a draw!");
-  } else if (winLose === 'win') {
-    console.log("Player wins!");
-    incrementWin();
-  } else if (winLose === 'lose') {
-    console.log("Computer wins!");
-    incrementLoss();
-  } else {
-    console.log("You done messed up A-a-ron!");
-  }
-
-  
-}
 
 
 
@@ -295,3 +265,36 @@ function moveCompIcon(compChoice) {
   compIconElement.classList.toggle("comp-icon-played");
   compIconElement.classList.toggle(`${compChoice}-choice`);
 }
+
+// ------------------------ MAIN GAME ------------------------ \\
+/**
+ * Runs game by calling all other needed functions in order
+ */
+function runGame(button) {
+  const playerChoice = playerShoot(button);
+  const compChoice = compShoot();
+
+  moveIcons(playerChoice, compChoice);
+
+  console.log(actionReport(playerChoice, compChoice));
+  
+  let winLose = calcWinner(playerChoice, compChoice);
+
+  setTimeout(function () {
+    moveIcons(playerChoice, compChoice)
+  }, 3000);
+
+  if (winLose === 'draw') {
+    console.log("It's a draw!");
+  } else if (winLose === 'win') {
+    console.log("Player wins!");
+    incrementWin();
+  } else if (winLose === 'lose') {
+    console.log("Computer wins!");
+    incrementLoss();
+  } else {
+    console.log("You done messed up A-a-ron!");
+  } 
+}
+
+// ------------------------------------------------------------ ||
