@@ -183,6 +183,32 @@ function calcWinner(playerChoice, compChoice) {
 // ------------ /switchboard ------------ ||
 
 
+
+// ------------ Score Tracking ------------ \\
+// Functions that keep track of the running score
+
+/** --- Increment Win ---
+ * Gets the current win score from the DOM and increments it by 1
+ */
+function incrementWin() {
+
+  let score = parseInt(document.getElementById('win').innerText);
+  document.getElementById('win').textContent = ++score;
+}
+
+/** --- Increment Loss ---
+ * Gets the current incorrect score from the DOM and increments it by 1
+ */
+function incrementLoss() {
+
+  let incorrect = parseInt(document.getElementById('loss').innerText);
+  document.getElementById('loss').textContent = ++incorrect;
+}
+
+// ------------ /score tracking ------------ ||
+
+
+
 // ------------ Flavour Functions ------------ \\
 // Functions which are not essential to the game logic
 // These are to add flavour and interest to improve the game experience
@@ -241,20 +267,6 @@ window.addEventListener("load", (event) => {
   audio.play();
 });
 
-function incrementWin() {
-
-  let score = parseInt(document.getElementById('win').innerText);
-  document.getElementById('win').textContent = ++score;
-}
-
-/**
- * Gets the current incorrect score from the DOM and increments it by 1
- */
-function incrementLoss() {
-
-  let incorrect = parseInt(document.getElementById('loss').innerText);
-  document.getElementById('loss').textContent = ++incorrect;
-}
 
 
 
