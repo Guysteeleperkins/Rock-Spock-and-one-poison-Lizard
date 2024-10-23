@@ -2,8 +2,13 @@
 let playerChoice = "";
 let compChoice = "";
 
-/**
- * Returns player's choice
+
+// ------------ Shoot Functions ------------ \\
+// Two functions to allow the player and computer to make their choice
+
+/** -- Player Shoot --
+ * Uses the data-type attribute to detect which button the player clicked
+ * Saves the value to playerChoice, then logs it to console and returns it as output
  */
 function playerShoot(button) {
   let playerChoice = button.getAttribute("data-type");
@@ -11,8 +16,9 @@ function playerShoot(button) {
   return playerChoice;
 }
 
-/**
- * Returns computer's choice
+/** Comp Shoot
+ * Uses a random number between 0 and 4 to select a choice
+ * Saves the value to compChoice, then logs it to console and returns it as output
  */
 function compShoot() {
   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -21,6 +27,10 @@ function compShoot() {
   console.log(`Computer: ${compChoice}`);
   return compChoice;
 }
+
+// ------------ /shoot functions ------------ ||
+
+
 
 // ------------ Choice functions ------------ \\
 // A function for each possible player choice. 
