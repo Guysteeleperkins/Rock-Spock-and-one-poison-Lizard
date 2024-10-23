@@ -141,15 +141,18 @@ function calcWinner(playerChoice, compChoice) {
   }
 }
 
-window.addEventListener("load", (event) => {
-  let audio = document.getElementById("landing-sting");
-  audio.play();
-});
+const audio = document.createElement("audio")
+document.body.appendChild(audio);
+audio.src = "./assets/audio/stinger-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3"
+
+document.body.addEventListener("load", function () {
+    audio.play()
+})
+
 
 // Adds event listener to buttons to call playerShoot on click, which returns the player's choice
 document.addEventListener("DOMContentLoaded", function () {
   
-
   
   let buttons = document.getElementsByTagName("button");
 
