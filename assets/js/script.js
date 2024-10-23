@@ -182,13 +182,6 @@ function calcWinner(playerChoice, compChoice) {
 
 // ------------ /switchboard ------------ ||
 
-window.addEventListener("load", (event) => {
-  let audio = document.getElementById("landing-sting");
-  audio.play();
-});
-
-
-
 
 
 /** 
@@ -211,6 +204,19 @@ function actionReport(playerChoice, compChoice) {
   const outcome = action.filter((matchup) => matchup.toLowerCase().includes(playerChoice) && matchup.toLowerCase().includes(compChoice));
   return (outcome[0]);
 }
+
+
+
+window.addEventListener("load", (event) => {
+  let audio = document.getElementById("landing-sting");
+  audio.play();
+});
+
+
+
+
+
+
 
 /**
  * Runs game by calling all other needed functions in order
