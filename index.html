@@ -23,14 +23,17 @@
 <body>
 <audio src="assets/audio/stinger-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3" id="landing-sting"></audio>
     <div class="container-fluid">
+        <div class="row text-center arcade-header">
+            <h1>Rock, Spock, and One Poison Lizard</h1>
+        </div>
             <div class="row game-area">
-                <div class="col-12 col-md-2 d-flex flex-md-column justify-content-center align-items-center text-center">
+                <div class="col-12 col-md-2 order-5 order-md-1 d-flex flex-md-column justify-content-center align-items-center text-center">
                     <div class="avatar" id="player-avatar">
                         <img src="assets/images/SpockPoisonedByLizard.webp" alt="Lizard Poisoning SPock">
                     </div>
                     <p class="scores">User Wins: <br><span id="win">0</span></p>
                 </div>
-                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="player-controls">
+                <div class="col-12 col-md-1 order-4 order-md-2 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="player-controls">
                     <button data-type="rock" class="btn btn--big btn--green">
                         <span class="btn-icon"><i class="fa-solid fa-hand-rock"></i></span>
                     </button>
@@ -47,12 +50,12 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </button>
                 </div>
-                <div class="col-12 col-md-6" id="game-display">
+                <div class="col-12 col-md-6 order-3" id="game-display">
                     <div class="game-table">
 
                     </div>
                 </div>
-                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="computer-controls">
+                <div class="col-12 col-md-1 order-2 order-md-4 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="computer-controls">
                     <div data-type="comp-rock" class="btn--big btn--green">
                         <i class="fa-solid fa-hand-rock"></i>
                     </div>
@@ -69,7 +72,7 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </div>
                 </div>
-                <div class="col-12 col-md-2 d-flex flex-row-reverse flex-md-column justify-content-center align-items-center text-center">
+                <div class="col-12 col-md-2 order-1 order-md-5 d-flex flex-row-reverse flex-md-column justify-content-center align-items-center text-center">
                     <div class="avatar" id="comp-avatar">
                         <img src="assets/images/eclipse.jpg" alt="Eclipse">
                     </div>
@@ -77,8 +80,8 @@
                 </div>
             </div>
             <div class="row rules">
-                <div class="col-6 text-right"><span id="rules-modal-btn">Rules</span></div>
-                <div class="col-6 text-left"><span id="choose-players">Choose Players</span></div>
+                <div class="col-6 text-right options"><span id="rules-modal-btn">Rules</span></div>
+                <div class="col-6 text-left options"><span id="choose-player-btn">Choose Players</span></div>
             </div>
         </div>
 
