@@ -23,6 +23,10 @@ function actionReport(playerChoice, compChoice) {
   return (outcome[0]);
 }
 
+// ------------ Choice functions ------------ \\
+// A function for each possible player choice. 
+// Uses a switch statement to return "win", "lose", or "draw", depending on the computer's choice.
+
 /**
  * Function to determine match result if player chooses rock. 
  * Uses a switch statement and takes compChoice as input.
@@ -118,6 +122,7 @@ function choseSpock(compChoice) {
   }
 }
 
+// ------------ /choice functions ------------ ||
 
 /**
  * Calculates the match winner
@@ -126,7 +131,7 @@ function calcWinner(playerChoice, compChoice) {
   switch (playerChoice) {
     case "rock":
       return choseRock(compChoice);
-      
+
     case "paper":
       return chosePaper(compChoice);
 
@@ -148,9 +153,9 @@ window.addEventListener("load", (event) => {
 
 // Adds event listener to buttons to call playerShoot on click, which returns the player's choice
 document.addEventListener("DOMContentLoaded", function () {
-  
 
-  
+
+
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) {
@@ -188,11 +193,13 @@ function runGame(button) {
   const playerChoice = playerShoot(button);
   const compChoice = compShoot();
 
-  moveIcons(playerChoice,compChoice);
+  moveIcons(playerChoice, compChoice);
 
   let winLose = calcWinner(playerChoice, compChoice);
 
-  setTimeout(function() { moveIcons(playerChoice,compChoice) }, 3000);
+  setTimeout(function () {
+    moveIcons(playerChoice, compChoice)
+  }, 3000);
 
   if (winLose === 'draw') {
     console.log("It's a draw!");
@@ -219,8 +226,8 @@ function incrementWin() {
 }
 
 /**
-* Gets the current incorrect score from the DOM and increments it by 1
-*/
+ * Gets the current incorrect score from the DOM and increments it by 1
+ */
 function incrementLoss() {
 
   let incorrect = parseInt(document.getElementById('loss').innerText);
@@ -233,21 +240,21 @@ function incrementLoss() {
 
 
 
-  function moveIcons(userChoice, computerChoice) {
-    moveUserIcon(userChoice);
-    moveCompIcon(computerChoice);
-  }
+function moveIcons(userChoice, computerChoice) {
+  moveUserIcon(userChoice);
+  moveCompIcon(computerChoice);
+}
 
 
-  
-  function moveUserIcon(userChoice) {
-    const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
-    userIconElement.classList.toggle("user-icon-played");
-    userIconElement.classList.toggle(`${userChoice}-choice`);
-  }
 
-  function moveCompIcon(compChoice) {
-    const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
-    compIconElement.classList.toggle("comp-icon-played");
-    compIconElement.classList.toggle(`${compChoice}-choice`);
-  }
+function moveUserIcon(userChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  userIconElement.classList.toggle("user-icon-played");
+  userIconElement.classList.toggle(`${userChoice}-choice`);
+}
+
+function moveCompIcon(compChoice) {
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  compIconElement.classList.toggle("comp-icon-played");
+  compIconElement.classList.toggle(`${compChoice}-choice`);
+}
