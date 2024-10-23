@@ -3,6 +3,18 @@ let playerChoice = "";
 let compChoice = "";
 
 
+// Adds event listener to buttons to call playerShoot on click, which returns the player's choice
+document.addEventListener("DOMContentLoaded", function () {
+  let buttons = document.getElementsByTagName("button");
+  
+  for (let button of buttons) {
+    button.addEventListener("click", function () {
+      runGame(this);
+    });
+  }
+});
+
+
 // ------------ Shoot Functions ------------ \\
 // Two functions to allow the player and computer to make their choice
 
@@ -160,19 +172,7 @@ window.addEventListener("load", (event) => {
   audio.play();
 });
 
-// Adds event listener to buttons to call playerShoot on click, which returns the player's choice
-document.addEventListener("DOMContentLoaded", function () {
 
-
-
-  let buttons = document.getElementsByTagName("button");
-
-  for (let button of buttons) {
-    button.addEventListener("click", function () {
-      runGame(this);
-    });
-  }
-});
 
 
 
