@@ -221,6 +221,8 @@ function runGame(button) {
 
   moveIcons(playerChoice, compChoice);
 
+  console.log(actionReport(playerChoice, compChoice));
+  
   let winLose = calcWinner(playerChoice, compChoice);
 
   setTimeout(function () {
@@ -239,7 +241,7 @@ function runGame(button) {
     console.log("You done messed up A-a-ron!");
   }
 
-  console.log(actionReport(playerChoice, compChoice));
+  
 }
 
 
