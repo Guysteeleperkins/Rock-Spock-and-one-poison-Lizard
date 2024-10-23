@@ -145,7 +145,7 @@ const audio = document.createElement("audio")
 document.body.appendChild(audio);
 audio.src = "./assets/audio/stinger-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3"
 
-document.body.addEventListener("load", function () {
+document.body.addEventListener("DOMContentLoaded", function () {
     audio.play()
 })
 
@@ -195,7 +195,10 @@ function runGame(button) {
 
   let winLose = calcWinner(playerChoice, compChoice);
 
-  setTimeout(function() { moveIcons(playerChoice,compChoice) }, 3000);
+  setTimeout(function() {
+                        toggleTransition(playerChoice, compChoice);
+                        moveIcons(playerChoice,compChoice);
+                        }, 3000);
 
   if (winLose === 'draw') {
     console.log("It's a draw!");
@@ -239,9 +242,15 @@ function incrementLoss() {
   function moveIcons(userChoice, computerChoice) {
     moveUserIcon(userChoice);
     moveCompIcon(computerChoice);
+
   }
 
-
+function toggleTransition(userChoice, compChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  userIconElement.classList.toggle("no-transition");
+  compIconElement.classList.toggle("no-transition");
+}
   
   function moveUserIcon(userChoice) {
     const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);

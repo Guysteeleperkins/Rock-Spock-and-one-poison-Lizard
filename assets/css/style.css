@@ -1,5 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: "Arcade";
+    src: url(../fonts/CosmicAlien-V4Ax.ttf);
+}
 
 /* --------- Global style */
 
@@ -13,21 +17,33 @@ body {
     box-sizing: border-box;
 }
 
-/* --------- Heading */
-
-.heading {
-    text-align: center;
-    font-size: 2.5rem;
+.no-transition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
-.logo {
-    height: 40px;
-    padding-right: 5px;
+/* --------- Heading */
+
+.arcade-header {
+    height: 10vh;
+    width: 100%;
+    background: url(../images/nebula.jpg) no-repeat center center/cover;
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+
+.arcade-header h1 {
+    color: #21d311;
+    font-family: "Arcade", sans-serif;
 }
 
 /* --------- Game layout */
 
-    
+
 .avatar {
     height: 12vw;
     width: 12vw;
@@ -206,7 +222,7 @@ body {
         height: 12rem;
         width: 12rem;
     }
-    
+
     .comp-icon-played {
         font-size: 6rem;
         top: 30%;
@@ -218,23 +234,26 @@ body {
 
 
 @media (max-width: 768px) {
+
+
     .avatar {
         height: 20vw;
         width: 20vw;
     }
+
     #game-display {
         max-height: 30vh;
     }
 
-    .user-icon-played {
+    .comp-icon-played {
         font-size: 4rem;
         top: 120%;
         left: 25%;
         height: 8rem;
         width: 8rem;
     }
-    
-    .comp-icon-played {
+
+    .user-icon-played {
         font-size: 4rem;
         top: -240%;
         right: 25%;
@@ -245,11 +264,11 @@ body {
 }
 
 @media (max-width: 576px) {
-    .user-icon-played {
+    .comp-icon-played {
         left: 15%;
     }
-    
-    .comp-icon-played {
+
+    .user-icon-played {
         right: 15%;
     }
 }
@@ -261,6 +280,7 @@ body {
         height: 25vw;
         width: 25vw;
     }
+
     .btn--big {
         width: 3rem;
         height: 3rem;
@@ -274,6 +294,4 @@ body {
 
 }
 
-@media (max-width: 320px) {
-
-}
+@media (max-width: 320px) {}
