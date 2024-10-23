@@ -2,7 +2,25 @@
 let playerChoice = "";
 let compChoice = "";
 
+/**
+ * Returns player's choice
+ */
+function playerShoot(button) {
+  let playerChoice = button.getAttribute("data-type");
+  console.log(`Player: ${playerChoice}`);
+  return playerChoice;
+}
 
+/**
+ * Returns computer's choice
+ */
+function compShoot() {
+  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  let choiceIndex = Math.floor(Math.random() * 5);
+  let compChoice = choices[choiceIndex];
+  console.log(`Computer: ${compChoice}`);
+  return compChoice;
+}
 
 // ------------ Choice functions ------------ \\
 // A function for each possible player choice. 
@@ -146,25 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/**
- * Returns player's choice
- */
-function playerShoot(button) {
-  let playerChoice = button.getAttribute("data-type");
-  console.log(`Player: ${playerChoice}`);
-  return playerChoice;
-}
 
-/**
- * Returns computer's choice
- */
-function compShoot() {
-  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-  let choiceIndex = Math.floor(Math.random() * 5);
-  let compChoice = choices[choiceIndex];
-  console.log(`Computer: ${compChoice}`);
-  return compChoice;
-}
 
 /** 
  * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
