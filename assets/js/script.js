@@ -1,7 +1,3 @@
-// Variables for storing player choice and computer choice
-let playerChoice = "";
-let compChoice = "";
-
 // ------------ Initialise Buttons ------------ \\
 // Listens for DOMContentLoaded
 // Identifies all buttons on the page and stores them in an array
@@ -51,7 +47,7 @@ function compShoot() {
 
 
 
-// ------------ Choice functions ------------ \\
+// ------------ Choice Functions ------------ \\
 // A function for each possible player choice. 
 // Uses a switch statement to return "win", "lose", or "draw", depending on the computer's choice.
 
@@ -266,11 +262,6 @@ window.addEventListener("load", (event) => {
   let audio = document.getElementById("landing-sting");
   audio.play();
 });
-
-
-
-
-
 
 
 
