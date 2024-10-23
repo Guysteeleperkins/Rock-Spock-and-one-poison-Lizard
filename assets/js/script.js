@@ -141,8 +141,16 @@ function calcWinner(playerChoice, compChoice) {
   }
 }
 
+window.addEventListener("load", (event) => {
+  let audio = document.getElementById("landing-sting");
+  audio.play();
+});
+
 // Adds event listener to buttons to call playerShoot on click, which returns the player's choice
 document.addEventListener("DOMContentLoaded", function () {
+  
+
+  
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) {
@@ -190,14 +198,36 @@ function runGame(button) {
     console.log("It's a draw!");
   } else if (winLose === 'win') {
     console.log("Player wins!");
+    incrementWin();
   } else if (winLose === 'lose') {
     console.log("Computer wins!");
+    incrementLoss();
   } else {
     console.log("You done messed up A-a-ron!");
   }
 
   console.log(actionReport(playerChoice, compChoice));
 }
+
+
+
+
+function incrementWin() {
+
+  let score = parseInt(document.getElementById('win').innerText);
+  document.getElementById('win').textContent = ++score;
+}
+
+/**
+* Gets the current incorrect score from the DOM and increments it by 1
+*/
+function incrementLoss() {
+
+  let incorrect = parseInt(document.getElementById('loss').innerText);
+  document.getElementById('loss').textContent = ++incorrect;
+}
+
+
 
 
 
