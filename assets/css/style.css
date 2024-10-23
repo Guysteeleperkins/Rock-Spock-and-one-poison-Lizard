@@ -86,16 +86,18 @@ body {
 }
 
 /* Win Lose Display in game area */
+
+
 #result-message {
     font-size: 2rem;
     font-weight: bold;
+    font-family: "Space Mono", sans-serif;
     padding: 20px;
-   
     border-radius: 10px;
     display: none; /* Hidden by default */
     position: absolute;
     width: 100%;
-    top: 60%; /* Vertically center */
+    top: 90%; /* Vertically center */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
@@ -333,8 +335,8 @@ body {
 @media (max-width: 576px) {
     .comp-icon-played {
         font-size: 4rem;
-        top: 110%;
-        left: 55%;
+        top: 115%;
+        left: 57%;
         height: 8rem;
         width: 8rem;
     }
@@ -342,7 +344,7 @@ body {
     .user-icon-played {
         font-size: 4rem;
         top: -210%;
-        left: 25%;
+        left: 27%;
         height: 8rem;
         width: 8rem;
     }

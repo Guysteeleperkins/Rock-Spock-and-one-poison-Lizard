@@ -190,13 +190,13 @@ function displayResultMessage(result) {
   const resultMessage = document.getElementById('result-message');
 
   if (result === 'win') {
-      resultMessage.innerHTML = 'You Win!';
+      resultMessage.innerText = 'You Win!';
       resultMessage.className = 'win'; // Apply win class
   } else if (result === 'lose') {
-      resultMessage.innerHTML = 'You Lose!';
+      resultMessage.innerText = 'You Lose!';
       resultMessage.className = 'lose'; // Apply lose class
   } else if (result === 'draw') {
-      resultMessage.innerHTML = 'Draw!';
+      resultMessage.innerText = 'Draw!';
       resultMessage.className = 'draw'; // Apply Draw class
   }
   
