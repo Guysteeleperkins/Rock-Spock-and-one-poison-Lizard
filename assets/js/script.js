@@ -51,7 +51,7 @@ function compShoot() {
 // A function for each possible player choice. 
 // Uses a switch statement to return "win", "lose", or "draw", depending on the computer's choice.
 
-/**
+/** --- Chose Rock ---
  * Function to determine match result if player chooses rock. 
  * Uses a switch statement and takes compChoice as input.
  */
@@ -70,7 +70,7 @@ function choseRock(compChoice) {
   }
 }
 
-/**
+/** --- Chose Paper ---
  * Function to determine match result if player chooses paper. 
  * Uses a switch statement and takes compChoice as input.
  */
@@ -89,7 +89,7 @@ function chosePaper(compChoice) {
   }
 }
 
-/**
+/** --- Chose Scissors ---
  * Function to determine match result if player chooses scissors. 
  * Uses a switch statement and takes compChoice as input. 
  */
@@ -108,7 +108,7 @@ function choseScissors(compChoice) {
   }
 }
 
-/**
+/** --- Chose Lizard ---
  * Function to determine match result if player chooses lizard. 
  * Uses a switch statement and takes compChoice as input. 
  */
@@ -127,7 +127,7 @@ function choseLizard(compChoice) {
   }
 }
 
-/**
+/** --- Chose Spock ---
  * Function to determine match result if player chooses spock. 
  * Uses a switch statement and takes compChoice as input. 
  */
