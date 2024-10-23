@@ -305,18 +305,18 @@ body {
 @media (max-width: 576px) {
     .comp-icon-played {
         font-size: 4rem;
-        top: 110%;
-        left: 55%;
+        top: 140%;
+        left: 60%;
         height: 8rem;
         width: 8rem;
     }
 
     .user-icon-played {
-        font-size: 4rem;
-        top: -210%;
-        left: 25%;
-        height: 8rem;
-        width: 8rem;
+        font-size: 6rem;
+        top: -160%;
+        left: 30%;
+        height: 12rem;
+        width: 12rem;
     }
 }
 
@@ -352,7 +352,7 @@ body {
 
     .user-icon-played {
         font-size: 3rem;
-        top: -190%;
+        top: -160%;
         left: 25%;
         height: 6rem;
         width: 6rem;
