@@ -2,26 +2,7 @@
 let playerChoice = "";
 let compChoice = "";
 
-/** 
- * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
- */
-function actionReport(playerChoice, compChoice) {
-  const action = [
-    "Rock crushes Scissors!",
-    "Rock crushes Lizard!",
-    "Paper covers Rock!",
-    "Paper disproves Spock!",
-    "Scissors cut Paper!",
-    "Scissors decapitate Lizard!",
-    "Lizard eats Paper!",
-    "Lizard poisons Spock!",
-    "Spock smashes Scissors!",
-    "Spock vaporizes Rock!"
-  ];
 
-  const outcome = action.filter((matchup) => matchup.toLowerCase().includes(playerChoice) && matchup.toLowerCase().includes(compChoice));
-  return (outcome[0]);
-}
 
 // ------------ Choice functions ------------ \\
 // A function for each possible player choice. 
@@ -185,6 +166,26 @@ function compShoot() {
   return compChoice;
 }
 
+/** 
+ * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
+ */
+function actionReport(playerChoice, compChoice) {
+  const action = [
+    "Rock crushes Scissors!",
+    "Rock crushes Lizard!",
+    "Paper covers Rock!",
+    "Paper disproves Spock!",
+    "Scissors cut Paper!",
+    "Scissors decapitate Lizard!",
+    "Lizard eats Paper!",
+    "Lizard poisons Spock!",
+    "Spock smashes Scissors!",
+    "Spock vaporizes Rock!"
+  ];
+
+  const outcome = action.filter((matchup) => matchup.toLowerCase().includes(playerChoice) && matchup.toLowerCase().includes(compChoice));
+  return (outcome[0]);
+}
 
 /**
  * Runs game by calling all other needed functions in order
