@@ -21,17 +21,19 @@
 </head>
 
 <body>
-    <h1 class="heading">
+    <!-- <h1 class="heading">
         Spock and Roll
-    </h1>
+    </h1> -->
           <!-- PLayer "board" -->
     <div class="container-fluid">
             <div class="row game-area">
-                <div class="col-2 d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-2 d-flex flex-md-column justify-content-center align-items-center text-center">
                     <div class="avatar" id="player-avatar">
+                        <img src="assets/images/SpockPoisonedByLizard.webp" alt="Lizard Poisoning SPock">
                     </div>
+                    <p class="scores">User Wins: <br><span id="win">0</span></p>
                 </div>
-                <div class="col-2 col-md-1 d-flex flex-column align-items-center" id="player-controls">
+                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="player-controls">
                     <button data-type="rock" class="btn btn--big btn--green">
                         <span class="btn-icon"><i class="fa-solid fa-hand-rock"></i></span>
                     </button>
@@ -48,12 +50,12 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </button>
                 </div>
-                <div class="col-4 col-md-6" id="game-display">
+                <div class="col-12 col-md-6" id="game-display">
                     <div class="game-table">
 
                     </div>
                 </div>
-                <div class="col-2 col-md-1 d-flex flex-column align-items-center" id="computer-controls">
+                <div class="col-12 col-md-1 d-flex flex-row flex-md-column justify-content-evenly align-items-center" id="computer-controls">
                     <div data-type="comp-rock" class="btn--big btn--green">
                         <i class="fa-solid fa-hand-rock"></i>
                     </div>
@@ -70,46 +72,20 @@
                         <i class="fa-solid fa-hand-spock"></i>
                     </div>
                 </div>
-                <div class="col-2 d-flex justify-content-center align-items-center">
-                    <div class="avatar" id="player-avatar">
+                <div class="col-12 col-md-2 d-flex flex-row-reverse flex-md-column justify-content-center align-items-center text-center">
+                    <div class="avatar" id="comp-avatar">
+                        <img src="assets/images/eclipse.jpg" alt="Eclipse">
                     </div>
+                    <p class="scores">Comp Wins:<br><span id="loss">0</span></p>
                 </div>
+            </div>
+            <div class="row rules">
+                <div class="col-6 text-right"><span id="rules-modal-btn">Rules</span></div>
+                <div class="col-6 text-left"><span id="choose-players">Choose Players</span></div>
             </div>
         </div>
 
 
-
-    <!-- <div class="game-area">
-        <div class="controls-area">
-            <button data-type="rock" class="btn btn--big btn--green">
-                <i class="fa-solid fa-hand-back-fist"></i>
-            </button>
-            <button data-type="paper" class="btn btn--big btn--blue">
-                <i class="fa-solid fa-toilet-paper"></i>
-            </button>
-            <button data-type="scissors" class="btn btn--big btn--orange">
-                <i class="fa-solid fa-scissors"></i>
-            </button>
-            <button data-type="lizard" class="btn btn--big btn--red">
-                <i class="fa-solid fa-dragon"></i>
-            </button>
-            <button data-type="spock" class="btn btn--big btn--red">
-                <i class="fa-solid fa-hand-spock"></i>
-            </button>
-        </div>
-        <div class="results-area">
-            <span id="winner"></span>
-            
-            <span id="description"></span>
-            <span id="loser"></span>
-            
-        </div>
-    </div> -->
-
-    <div class="score-area">
-        <p class="scores">User Wins <span id="win">0</span></p>
-        <p class="scores">Computer Wins <span id="loss">0</span></p>
-    </div>
 
     <script src="https://kit.fontawesome.com/200607b541.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>

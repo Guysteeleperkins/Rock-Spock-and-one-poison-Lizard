@@ -27,28 +27,45 @@ body {
 
 /* --------- Game layout */
 
+    
 .avatar {
     height: 12vw;
     width: 12vw;
     border: 5px solid #21d311;
+    margin: 20px 0;
 }
 
-#player-avatar {
-        background: url(../images/SpockPoisonedByLizard.webp) no-repeat center center/cover;
+.avatar img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#rules-modal {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 42, );
+}
+
+/* #player-avatar {
         position: relative;
         margin-bottom: 0px;
         border-radius: 0;
-}
-
-
-/* .game-table {
-    background: url(../images/eclipse.jpg) no-repeat center center/cover;
-    height: 100%;
-    width: auto;
-    margin-bottom: 0px;
-    border-radius: 0;
-}
 } */
+
+
+.game-table {
+    min-height: 60vh;
+    width: auto;
+}
+
+.game-area {
+    min-height: 75vh;
+}
+
 
 .score-area {
     margin: 5px auto;
@@ -100,7 +117,7 @@ body {
     color: blue;
 }
 
-.btn--blue:active,
+/* .btn--blue:active, */
 .btn--blue:hover,
 .paper-choice {
     background-color: darkblue;
@@ -112,7 +129,7 @@ body {
     color: orange;
 }
 
-.btn--orange:active,
+/* .btn--orange:active, */
 .btn--orange:hover,
 .scissors-choice {
     background-color: darkorange;
@@ -124,7 +141,7 @@ body {
     color: red;
 }
 
-.btn--red:active,
+/* .btn--red:active, */
 .btn--red:hover,
 .lizard-choice {
     background-color: darkred;
@@ -136,7 +153,7 @@ body {
     color: green;
 }
 
-.btn--green:active,
+/* .btn--green:active, */
 .btn--green:hover,
 .rock-choice {
     background-color: darkgreen;
@@ -148,7 +165,7 @@ body {
     color: #a7189f;
 }
 
-.btn--purple:active,
+/* .btn--purple:active, */
 .btn--purple:hover,
 .spock-choice {
     background-color: #a7189f;
@@ -156,33 +173,85 @@ body {
 }
 
 
+.user-icon-played {
+    position: absolute;
+    font-size: 6rem;
+    top: 20%;
+    left: 100%;
+    height: 12rem;
+    width: 12rem;
+}
+
+.comp-icon-played {
+    position: absolute;
+    font-size: 6rem;
+    top: 20%;
+    right: 100%;
+    height: 12rem;
+    width: 12rem;
+}
 
 
 /* --------- Media queries */
 
-@media (max-width: 414px) {
-    .controls-area {
-        width: 100%;
+
+@media (max-width: 768px) {
+    .avatar {
+        height: 22vh;
+        width: 22vh;
+    }
+    #game-display {
+        max-height: 30vh;
     }
 
-
-    .score-area {
-        width: 100%;
+    .user-icon-played {
+        font-size: 4rem;
+        top: 90%;
+        left: 25%;
+        height: 8rem;
+        width: 8rem;
+    }
+    
+    .comp-icon-played {
+        font-size: 4rem;
+        top: -210%;
+        right: 25%;
+        height: 8rem;
+        width: 8rem;
     }
 
-    .scores {
-        margin: 0.5em auto;
-        display: block;
-        padding: 5px;
-    }
+}
 
-    .heading {
-        font-size: 2rem;
+@media (max-width: 576px) {
+    .user-icon-played {
+        left: 15%;
+    }
+    
+    .comp-icon-played {
+        right: 15%;
     }
 }
 
-@media (max-width: 320px) {
-    .game-area {
-        height: 70vh;
+
+@media (max-width: 414px) {
+
+    .avatar {
+        height: 25vw;
+        width: 25vw;
     }
+    .btn--big {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+
+    }
+
+    #game-display {
+        max-height: 20vh;
+    }
+
+}
+
+@media (max-width: 320px) {
+
 }
