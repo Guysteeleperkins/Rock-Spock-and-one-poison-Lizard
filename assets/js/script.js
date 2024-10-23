@@ -258,10 +258,19 @@ function moveCompIcon(compChoice) {
 
 // ------------ /flavour functions ------------
 
+
+
+// ------------ Misc Extras ------------ \\
+// Other code not essential to the game logic
+// This is for code that improves the user experience but which doesn't belong in Flavour Functions
+
+
 window.addEventListener("load", (event) => {
   let audio = document.getElementById("landing-sting");
   audio.play();
 });
+
+// ------------ /misc extras ------------ ||
 
 
 
