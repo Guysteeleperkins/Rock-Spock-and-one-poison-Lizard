@@ -2,7 +2,7 @@
 // Listens for DOMContentLoaded
 // Identifies all buttons on the page and stores them in an array
 // Iterates through the array and adds an event listener to every button
-// Buttons now listen for a click event to call the runGame function, passing the button element as this
+// Buttons now listen for a click event to call the runGame function, passing the button element as 'this'
 
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName("button");
@@ -278,33 +278,33 @@ window.addEventListener("load", (event) => {
 
 
 // ------------------------ MAIN GAME ------------------------ \\
-/**
+/** --- Run Game ---
  * Runs game by calling all other needed functions in order
  */
 function runGame(button) {
-  const playerChoice = playerShoot(button);
-  const compChoice = compShoot();
+  const playerChoice = playerShoot(button);     // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
+  const compChoice = compShoot();               // Takes computer choice and saves it to compChoice constant
 
-  moveIcons(playerChoice, compChoice);
+  moveIcons(playerChoice, compChoice);      // Moves the icons representing player's and computer's choices
 
-  console.log(actionReport(playerChoice, compChoice));
+  console.log(actionReport(playerChoice, compChoice));    // Logs the action report narration to the console
   
-  let winLose = calcWinner(playerChoice, compChoice);
+  let winLose = calcWinner(playerChoice, compChoice);     // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
 
-  setTimeout(function () {
+  setTimeout(function () {                    // Wait 3 seconds then move icons back to initial positions
     moveIcons(playerChoice, compChoice)
   }, 3000);
 
   if (winLose === 'draw') {
-    console.log("It's a draw!");
+    console.log("It's a draw!");        // Announces draw
   } else if (winLose === 'win') {
-    console.log("Player wins!");
-    incrementWin();
+    console.log("Player wins!");        // Announces win
+    incrementWin();                     // Increments win counter
   } else if (winLose === 'lose') {
-    console.log("Computer wins!");
-    incrementLoss();
+    console.log("Computer wins!");      // Announces loss
+    incrementLoss();                    // Increments loss counter
   } else {
-    console.log("You done messed up A-a-ron!");
+    console.log("You done messed up A-a-ron!");     // Error announcer. Should never execute.
   } 
 }
 
