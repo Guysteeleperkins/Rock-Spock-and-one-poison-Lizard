@@ -183,6 +183,30 @@ function compShoot() {
   return compChoice;
 }
 
+/**
+ * Function to display win/lose/draw message
+ */
+function displayResultMessage(result) {
+  const resultMessage = document.getElementById('result-message');
+
+  if (result === 'win') {
+      resultMessage.innerHTML = 'You Win!';
+      resultMessage.className = 'win'; // Apply win class
+  } else if (result === 'lose') {
+      resultMessage.innerHTML = 'You Lose!';
+      resultMessage.className = 'lose'; // Apply lose class
+  } else if (result === 'draw') {
+      resultMessage.innerHTML = 'Draw!';
+      resultMessage.className = 'draw'; // Apply Draw class
+  }
+  
+  resultMessage.style.display = 'block'; // Show the message
+
+  // Hide the message after 3 seconds
+  setTimeout(() => {
+      resultMessage.style.display = 'none';
+  }, 3000);
+}
 
 /**
  * Runs game by calling all other needed functions in order
@@ -202,12 +226,15 @@ function runGame(button) {
 
   if (winLose === 'draw') {
     console.log("It's a draw!");
+    displayResultMessage('draw'); // Show draw message
   } else if (winLose === 'win') {
     console.log("Player wins!");
     incrementWin();
+    displayResultMessage('win'); // Show win message
   } else if (winLose === 'lose') {
     console.log("Computer wins!");
     incrementLoss();
+    displayResultMessage('lose'); // Show lose message
   } else {
     console.log("You done messed up A-a-ron!");
   }
