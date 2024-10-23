@@ -27,11 +27,10 @@ body {
 /* --------- Heading */
 
 .arcade-header {
-    height: 10vh;
+    height: 15vh;
     width: 100%;
     background: url(../images/nebula.jpg) no-repeat center center/cover;
     position: relative;
-    padding-top: 15px;
     margin-bottom: 10px;
     border-radius: 0;
 }
@@ -39,6 +38,7 @@ body {
 .arcade-header h1 {
     color: #21d311;
     font-family: "Arcade", sans-serif;
+    margin: auto 0px;
 }
 
 /* --------- Game layout */
@@ -256,7 +256,7 @@ body {
     .user-icon-played {
         font-size: 4rem;
         top: -240%;
-        right: 25%;
+        left: 55%;
         height: 8rem;
         width: 8rem;
     }
@@ -265,11 +265,19 @@ body {
 
 @media (max-width: 576px) {
     .comp-icon-played {
-        left: 15%;
+        font-size: 4rem;
+        top: 110%;
+        left: 55%;
+        height: 8rem;
+        width: 8rem;
     }
 
     .user-icon-played {
-        right: 15%;
+        font-size: 4rem;
+        top: -210%;
+        left: 25%;
+        height: 8rem;
+        width: 8rem;
     }
 }
 
@@ -292,6 +300,20 @@ body {
         max-height: 20vh;
     }
 
-}
+    .comp-icon-played {
+        font-size: 3rem;
+        top: 100%;
+        left: 55%;
+        height: 6rem;
+        width: 6rem;
+    }
 
-@media (max-width: 320px) {}
+    .user-icon-played {
+        font-size: 3rem;
+        top: -190%;
+        left: 25%;
+        height: 6rem;
+        width: 6rem;
+    }
+
+}
