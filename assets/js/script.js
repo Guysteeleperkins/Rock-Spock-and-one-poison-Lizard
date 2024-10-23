@@ -179,7 +179,12 @@ function compShoot() {
 function runGame(button) {
   const playerChoice = playerShoot(button);
   const compChoice = compShoot();
+
+  moveIcons(playerChoice,compChoice);
+
   let winLose = calcWinner(playerChoice, compChoice);
+
+  setTimeout(function() { moveIcons(playerChoice,compChoice) }, 3000);
 
   if (winLose === 'draw') {
     console.log("It's a draw!");
@@ -195,7 +200,7 @@ function runGame(button) {
 }
 
 
-  setTimeout(function() { moveIcons(userChoice,computerChoice) }, 3000);
+
 
 
   function moveIcons(userChoice, computerChoice) {
@@ -215,3 +220,4 @@ function runGame(button) {
     const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
     compIconElement.classList.toggle("comp-icon-played");
     compIconElement.classList.toggle(`${compChoice}-choice`);
+  }
