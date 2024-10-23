@@ -236,9 +236,15 @@ function actionReport(playerChoice, compChoice) {
 function moveIcons(playerChoice, computerChoice) {
   movePlayerIcon(playerChoice);
   moveCompIcon(computerChoice);
+
 }
 
-/** --- Move Player Icon ---
+function toggleTransition(userChoice, compChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  userIconElement.classList.toggle("no-transition");
+  compIconElement.classList.toggle("no-transition");
+}/** --- Move Player Icon ---
  * 
  */
 function movePlayerIcon(playerChoice) {
@@ -309,3 +315,12 @@ function runGame(button) {
 }
 
 // ------------------------------------------------------------ ||
+
+
+  // JS code for bootstrap modal
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})

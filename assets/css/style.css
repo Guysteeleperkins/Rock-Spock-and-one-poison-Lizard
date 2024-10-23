@@ -1,5 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@font-face {
+    font-family: "Arcade";
+    src: url(../fonts/CosmicAlien-V4Ax.ttf);
+}
 
 /* --------- Global style */
 
@@ -13,21 +17,33 @@ body {
     box-sizing: border-box;
 }
 
-/* --------- Heading */
-
-.heading {
-    text-align: center;
-    font-size: 2.5rem;
+.no-transition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }
 
-.logo {
-    height: 40px;
-    padding-right: 5px;
+/* --------- Heading */
+
+.arcade-header {
+    height: 15vh;
+    width: 100%;
+    background: url(../images/nebula.jpg) no-repeat center center/cover;
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+
+.arcade-header h1 {
+    color: #21d311;
+    font-family: "Arcade", sans-serif;
+    margin: auto 0px;
 }
 
 /* --------- Game layout */
 
-    
+
 .avatar {
     height: 12vw;
     width: 12vw;
@@ -40,15 +56,18 @@ body {
     max-height: 100%;
 }
 
-#rules-modal {
-    z-index: 0;
-    position: absolute;
+.options {
+    height: 100%;
+    background-color: rgba(0, 255, 42, 0.1);
+}
+
+/* #choose-player-btn {
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 255, 42, );
-}
+    background-color: rgba(0, 255, 42, 0.1);
+} */
 
 /* #player-avatar {
         position: relative;
@@ -65,6 +84,36 @@ body {
 .game-area {
     min-height: 75vh;
 }
+
+/* Win Lose Display in game area */
+
+
+#result-message {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Space Mono", sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Hidden by default */
+    position: absolute;
+    width: 100%;
+    top: 90%; /* Vertically center */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+  
+  .win {
+    color: green;
+  }
+  
+  .lose {
+    color: red;
+  }
+
+  .draw {
+    color: blue;
+  }
 
 
 .score-area {
@@ -101,9 +150,9 @@ body {
     border-radius: 50%;
     background-color: rgb(0, 0, 0);
     border: 2px solid;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
     margin: 10px 0px;
     transition: all 0.5s;
     display: flex;
@@ -175,47 +224,108 @@ body {
 
 .user-icon-played {
     position: absolute;
-    font-size: 6rem;
-    top: 20%;
-    left: 100%;
-    height: 12rem;
-    width: 12rem;
+    font-size: 8rem;
+    top: 30%;
+    left: 150%;
+    height: 16rem;
+    width: 16rem;
 }
 
 .comp-icon-played {
     position: absolute;
-    font-size: 6rem;
-    top: 20%;
-    right: 100%;
-    height: 12rem;
-    width: 12rem;
+    font-size: 8rem;
+    top: 30%;
+    right: 150%;
+    height: 16rem;
+    width: 16rem;
 }
 
+/* --------- Rules Modal */
+#rules-modal-btn,
+#close-modal-btn {
+    background-color: rgb(0, 0, 0) !important;
+    border-color: rgb(0, 0, 0);
+    color: #21d311;
+    border: 0;
+
+}
+
+#rules-modal-btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+#RulesModal {
+    background-color: rgb(0, 0, 0);
+}
+
+.modal-content {
+    background-color: rgb(0, 0, 0);
+    border-width: 5px;
+    border-color: #21d311;
+
+}
+
+#rules-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#btn-close {
+    color: #21d311 !important;
+}
+
+.modal-header {
+    border: 0;
+}
 
 /* --------- Media queries */
 
+@media (max-width: 1200px) {
+    .user-icon-played {
+        position: absolute;
+        font-size: 6rem;
+        top: 30%;
+        left: 120%;
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .comp-icon-played {
+        font-size: 6rem;
+        top: 30%;
+        right: 120%;
+        height: 12rem;
+        width: 12rem;
+    }
+}
+
 
 @media (max-width: 768px) {
+
+
     .avatar {
-        height: 22vh;
-        width: 22vh;
+        height: 20vw;
+        width: 20vw;
     }
+
     #game-display {
         max-height: 30vh;
     }
 
-    .user-icon-played {
+    .comp-icon-played {
         font-size: 4rem;
-        top: 90%;
+        top: 120%;
         left: 25%;
         height: 8rem;
         width: 8rem;
     }
-    
-    .comp-icon-played {
+
+    .user-icon-played {
         font-size: 4rem;
-        top: -210%;
-        right: 25%;
+        top: -240%;
+        left: 55%;
         height: 8rem;
         width: 8rem;
     }
@@ -223,12 +333,20 @@ body {
 }
 
 @media (max-width: 576px) {
-    .user-icon-played {
-        left: 15%;
-    }
-    
     .comp-icon-played {
-        right: 15%;
+        font-size: 4rem;
+        top: 115%;
+        left: 57%;
+        height: 8rem;
+        width: 8rem;
+    }
+
+    .user-icon-played {
+        font-size: 4rem;
+        top: -210%;
+        left: 27%;
+        height: 8rem;
+        width: 8rem;
     }
 }
 
@@ -239,6 +357,7 @@ body {
         height: 25vw;
         width: 25vw;
     }
+
     .btn--big {
         width: 3rem;
         height: 3rem;
@@ -250,8 +369,23 @@ body {
         max-height: 20vh;
     }
 
-}
-
 @media (max-width: 320px) {
+
+
+    .comp-icon-played {
+        font-size: 3rem;
+        top: 100%;
+        left: 55%;
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .user-icon-played {
+        font-size: 3rem;
+        top: -190%;
+        left: 25%;
+        height: 6rem;
+        width: 6rem;
+    }
 
 }
