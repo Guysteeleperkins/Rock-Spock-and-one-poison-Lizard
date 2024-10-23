@@ -32,14 +32,29 @@ body {
     height: 12vw;
     width: 12vw;
     border: 5px solid #21d311;
+    margin: 20px 0;
 }
 
-#player-avatar {
-        background: url(../images/SpockPoisonedByLizard.webp) no-repeat center center/cover;
+.avatar img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#rules-modal {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 42, );
+}
+
+/* #player-avatar {
         position: relative;
         margin-bottom: 0px;
         border-radius: 0;
-}
+} */
 
 
 .game-table {
@@ -189,6 +204,32 @@ body {
         max-height: 30vh;
     }
 
+    .user-icon-played {
+        font-size: 4rem;
+        top: 90%;
+        left: 25%;
+        height: 8rem;
+        width: 8rem;
+    }
+    
+    .comp-icon-played {
+        font-size: 4rem;
+        top: -210%;
+        right: 25%;
+        height: 8rem;
+        width: 8rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .user-icon-played {
+        left: 15%;
+    }
+    
+    .comp-icon-played {
+        right: 15%;
+    }
 }
 
 
