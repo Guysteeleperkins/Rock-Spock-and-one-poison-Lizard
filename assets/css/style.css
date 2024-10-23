@@ -191,6 +191,13 @@ body {
     width: 12rem;
 }
 
+/* --------- Rules Modal */
+#rules-modal-btn {
+    background-color: rgb(50, 0, 0);
+    border-color: rgb(0, 0, 0);
+    color: #21d311;
+    
+}
 
 /* --------- Media queries */
 
