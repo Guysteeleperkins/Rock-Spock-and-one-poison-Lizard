@@ -152,8 +152,14 @@ function choseSpock(compChoice) {
 
 // ------------ /choice functions ------------ ||
 
-/**
- * Calculates the match winner
+
+
+// ------------ Switchboard ------------ \\
+// Evaluates player choice and progresses game
+
+/** --- Calc Winner ---
+ * Takes playerChoice and compChoice as inputs
+ * Calls the choice function that corresponds to the player's choice, passing compChoice as input
  */
 function calcWinner(playerChoice, compChoice) {
   switch (playerChoice) {
@@ -173,6 +179,8 @@ function calcWinner(playerChoice, compChoice) {
       return choseSpock(compChoice);
   }
 }
+
+// ------------ /switchboard ------------ ||
 
 window.addEventListener("load", (event) => {
   let audio = document.getElementById("landing-sting");
