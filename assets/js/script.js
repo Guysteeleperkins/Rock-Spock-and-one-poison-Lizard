@@ -1,8 +1,215 @@
-// Variables for storing player choice and computer choice
-let playerChoice = "";
-let compChoice = "";
+// ------------ Initialise Buttons ------------ \\
+// Listens for DOMContentLoaded
+// Identifies all buttons on the page and stores them in an array
+// Iterates through the array and adds an event listener to every button
+// Buttons now listen for a click event to call the runGame function, passing the button element as 'this'
 
-/** 
+document.addEventListener("DOMContentLoaded", function () {
+  let buttons = document.getElementsByTagName("button");
+  
+  for (let button of buttons) {
+    button.addEventListener("click", function () {
+      runGame(this);
+    });
+  }
+});
+
+// ------------ /initialise buttons ------------ ||
+
+
+
+// ------------ Shoot Functions ------------ \\
+// Two functions to allow the player and computer to make their choice
+
+/** --- Player Shoot ---
+ * Uses the data-type attribute to detect which button the player clicked
+ * Saves the value to playerChoice, then logs it to console and returns it as output
+ */
+function playerShoot(button) {
+  let playerChoice = button.getAttribute("data-type");
+  console.log(`Player: ${playerChoice}`);
+  return playerChoice;
+}
+
+/** --- Comp Shoot ---
+ * Uses a random number between 0 and 4 to select a choice
+ * Saves the value to compChoice, then logs it to console and returns it as output
+ */
+function compShoot() {
+  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  let choiceIndex = Math.floor(Math.random() * 5);
+  let compChoice = choices[choiceIndex];
+  console.log(`Computer: ${compChoice}`);
+  return compChoice;
+}
+
+// ------------ /shoot functions ------------ ||
+
+
+
+// ------------ Choice Functions ------------ \\
+// A function for each possible player choice. 
+// Uses a switch statement to return "win", "lose", or "draw", depending on the computer's choice.
+
+/** --- Chose Rock ---
+ * Function to determine match result if player chooses rock. 
+ * Uses a switch statement and takes compChoice as input.
+ */
+function choseRock(compChoice) {
+  switch (compChoice) {
+    case "rock":
+      return 'draw';
+
+    case "scissors":
+    case "lizard":
+      return 'win';
+
+    case "paper":
+    case "spock":
+      return 'lose';
+  }
+}
+
+/** --- Chose Paper ---
+ * Function to determine match result if player chooses paper. 
+ * Uses a switch statement and takes compChoice as input.
+ */
+function chosePaper(compChoice) {
+  switch (compChoice) {
+    case "paper":
+      return 'draw';
+
+    case "rock":
+    case "spock":
+      return 'win';
+
+    case "scissors":
+    case "lizard":
+      return 'lose';
+  }
+}
+
+/** --- Chose Scissors ---
+ * Function to determine match result if player chooses scissors. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseScissors(compChoice) {
+  switch (compChoice) {
+    case "scissors":
+      return 'draw';
+
+    case "paper":
+    case "lizard":
+      return 'win';
+
+    case "rock":
+    case "spock":
+      return 'lose';
+  }
+}
+
+/** --- Chose Lizard ---
+ * Function to determine match result if player chooses lizard. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseLizard(compChoice) {
+  switch (compChoice) {
+    case "lizard":
+      return 'draw';
+
+    case "paper":
+    case "spock":
+      return 'win';
+
+    case "rock":
+    case "scissors":
+      return 'lose';
+  }
+}
+
+/** --- Chose Spock ---
+ * Function to determine match result if player chooses spock. 
+ * Uses a switch statement and takes compChoice as input. 
+ */
+function choseSpock(compChoice) {
+  switch (compChoice) {
+    case "spock":
+      return 'draw';
+
+    case "rock":
+    case "scissors":
+      return 'win';
+
+    case "paper":
+    case "lizard":
+      return 'lose';
+  }
+}
+
+// ------------ /choice functions ------------ ||
+
+
+
+// ------------ Switchboard ------------ \\
+// Evaluates player choice and progresses game
+
+/** --- Calc Winner ---
+ * Takes playerChoice and compChoice as inputs
+ * Calls the choice function that corresponds to the player's choice, passing compChoice as input
+ */
+function calcWinner(playerChoice, compChoice) {
+  switch (playerChoice) {
+    case "rock":
+      return choseRock(compChoice);
+
+    case "paper":
+      return chosePaper(compChoice);
+
+    case "scissors":
+      return choseScissors(compChoice);
+
+    case "lizard":
+      return choseLizard(compChoice);
+
+    case "spock":
+      return choseSpock(compChoice);
+  }
+}
+
+// ------------ /switchboard ------------ ||
+
+
+
+// ------------ Score Tracking ------------ \\
+// Functions that keep track of the running score
+
+/** --- Increment Win ---
+ * Gets the current win score from the DOM and increments it by 1
+ */
+function incrementWin() {
+
+  let score = parseInt(document.getElementById('win').innerText);
+  document.getElementById('win').textContent = ++score;
+}
+
+/** --- Increment Loss ---
+ * Gets the current incorrect score from the DOM and increments it by 1
+ */
+function incrementLoss() {
+
+  let incorrect = parseInt(document.getElementById('loss').innerText);
+  document.getElementById('loss').textContent = ++incorrect;
+}
+
+// ------------ /score tracking ------------ ||
+
+
+
+// ------------ Flavour Functions ------------ \\
+// Functions which are not essential to the game logic
+// These are to add flavour and interest to improve the game experience
+
+/** --- Action Report ---
  * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
  */
 function actionReport(playerChoice, compChoice) {
@@ -23,273 +230,91 @@ function actionReport(playerChoice, compChoice) {
   return (outcome[0]);
 }
 
-/**
- * Function to determine match result if player chooses rock. 
- * Uses a switch statement and takes compChoice as input.
+/** --- Move Icons ---
+ * 
  */
-function choseRock(compChoice) {
-  switch (compChoice) {
-    case "rock":
-      return 'draw';
+function moveIcons(playerChoice, computerChoice) {
+  movePlayerIcon(playerChoice);
+  moveCompIcon(computerChoice);
 
-    case "scissors":
-    case "lizard":
-      return 'win';
-
-    case "paper":
-    case "spock":
-      return 'lose';
-  }
 }
-
-/**
- * Function to determine match result if player chooses paper. 
- * Uses a switch statement and takes compChoice as input.
- */
-function chosePaper(compChoice) {
-  switch (compChoice) {
-    case "paper":
-      return 'draw';
-
-    case "rock":
-    case "spock":
-      return 'win';
-
-    case "scissors":
-    case "lizard":
-      return 'lose';
-  }
-}
-
-/**
- * Function to determine match result if player chooses scissors. 
- * Uses a switch statement and takes compChoice as input. 
- */
-function choseScissors(compChoice) {
-  switch (compChoice) {
-    case "scissors":
-      return 'draw';
-
-    case "paper":
-    case "lizard":
-      return 'win';
-
-    case "rock":
-    case "spock":
-      return 'lose';
-  }
-}
-
-/**
- * Function to determine match result if player chooses lizard. 
- * Uses a switch statement and takes compChoice as input. 
- */
-function choseLizard(compChoice) {
-  switch (compChoice) {
-    case "lizard":
-      return 'draw';
-
-    case "paper":
-    case "spock":
-      return 'win';
-
-    case "rock":
-    case "scissors":
-      return 'lose';
-  }
-}
-
-/**
- * Function to determine match result if player chooses spock. 
- * Uses a switch statement and takes compChoice as input. 
- */
-function choseSpock(compChoice) {
-  switch (compChoice) {
-    case "spock":
-      return 'draw';
-
-    case "rock":
-    case "scissors":
-      return 'win';
-
-    case "paper":
-    case "lizard":
-      return 'lose';
-  }
-}
-
-
-/**
- * Calculates the match winner
- */
-function calcWinner(playerChoice, compChoice) {
-  switch (playerChoice) {
-    case "rock":
-      return choseRock(compChoice);
-      
-    case "paper":
-      return chosePaper(compChoice);
-
-    case "scissors":
-      return choseScissors(compChoice);
-
-    case "lizard":
-      return choseLizard(compChoice);
-
-    case "spock":
-      return choseSpock(compChoice);
-  }
-}
-
-const audio = document.createElement("audio")
-document.body.appendChild(audio);
-audio.src = "./assets/audio/stinger-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3"
-
-document.body.addEventListener("DOMContentLoaded", function () {
-    audio.play()
-})
-
-
-// Adds event listener to buttons to call playerShoot on click, which returns the player's choice
-document.addEventListener("DOMContentLoaded", function () {
-  
-  
-  let buttons = document.getElementsByTagName("button");
-
-  for (let button of buttons) {
-    button.addEventListener("click", function () {
-      runGame(this);
-    });
-  }
-});
-
-/**
- * Returns player's choice
- */
-function playerShoot(button) {
-  let playerChoice = button.getAttribute("data-type");
-  console.log(`Player: ${playerChoice}`);
-  return playerChoice;
-}
-
-/**
- * Returns computer's choice
- */
-function compShoot() {
-  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-  let choiceIndex = Math.floor(Math.random() * 5);
-  let compChoice = choices[choiceIndex];
-  console.log(`Computer: ${compChoice}`);
-  return compChoice;
-}
-
-/**
- * Function to display win/lose/draw message
- */
-function displayResultMessage(result) {
-  const resultMessage = document.getElementById('result-message');
-
-  if (result === 'win') {
-      resultMessage.innerText = 'You Win!';
-      resultMessage.className = 'win'; // Apply win class
-  } else if (result === 'lose') {
-      resultMessage.innerText = 'You Lose!';
-      resultMessage.className = 'lose'; // Apply lose class
-  } else if (result === 'draw') {
-      resultMessage.innerText = 'Draw!';
-      resultMessage.className = 'draw'; // Apply Draw class
-  }
-  
-  resultMessage.style.display = 'block'; // Show the message
-
-  // Hide the message after 3 seconds
-  setTimeout(() => {
-      resultMessage.style.display = 'none';
-  }, 3000);
-}
-
-/**
- * Runs game by calling all other needed functions in order
- */
-function runGame(button) {
-  const playerChoice = playerShoot(button);
-  const compChoice = compShoot();
-
-  moveIcons(playerChoice,compChoice);
-
-  let winLose = calcWinner(playerChoice, compChoice);
-
-  setTimeout(function() {
-                        toggleTransition(playerChoice, compChoice);
-                        moveIcons(playerChoice,compChoice);
-                        }, 3000);
-
-  if (winLose === 'draw') {
-    console.log("It's a draw!");
-    displayResultMessage('draw'); // Show draw message
-  } else if (winLose === 'win') {
-    console.log("Player wins!");
-    incrementWin();
-    displayResultMessage('win'); // Show win message
-  } else if (winLose === 'lose') {
-    console.log("Computer wins!");
-    incrementLoss();
-    displayResultMessage('lose'); // Show lose message
-  } else {
-    console.log("You done messed up A-a-ron!");
-  }
-
-  console.log(actionReport(playerChoice, compChoice));
-}
-
-
-
-
-function incrementWin() {
-
-  let score = parseInt(document.getElementById('win').innerText);
-  document.getElementById('win').textContent = ++score;
-}
-
-/**
-* Gets the current incorrect score from the DOM and increments it by 1
-*/
-function incrementLoss() {
-
-  let incorrect = parseInt(document.getElementById('loss').innerText);
-  document.getElementById('loss').textContent = ++incorrect;
-}
-
-
-
-
-
-
-
-  function moveIcons(userChoice, computerChoice) {
-    moveUserIcon(userChoice);
-    moveCompIcon(computerChoice);
-
-  }
 
 function toggleTransition(userChoice, compChoice) {
   const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
   const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
   userIconElement.classList.toggle("no-transition");
   compIconElement.classList.toggle("no-transition");
+}/** --- Move Player Icon ---
+ * 
+ */
+function movePlayerIcon(playerChoice) {
+  const playerIconElement = document.querySelector(`[data-type="${playerChoice}"]`);
+  playerIconElement.classList.toggle("player-icon-played");
+  playerIconElement.classList.toggle(`${playerChoice}-choice`);
 }
-  
-  function moveUserIcon(userChoice) {
-    const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
-    userIconElement.classList.toggle("user-icon-played");
-    userIconElement.classList.toggle(`${userChoice}-choice`);
-  }
 
-  function moveCompIcon(compChoice) {
-    const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
-    compIconElement.classList.toggle("comp-icon-played");
-    compIconElement.classList.toggle(`${compChoice}-choice`);
-  }
+/** --- Move Comp Icon ---
+ * 
+ */
+function moveCompIcon(compChoice) {
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  compIconElement.classList.toggle("comp-icon-played");
+  compIconElement.classList.toggle(`${compChoice}-choice`);
+}
+
+// ------------ /flavour functions ------------
+
+
+
+// ------------ Misc Extras ------------ \\
+// Other code not essential to the game logic
+// This is for code that improves the user experience but which doesn't belong in Flavour Functions
+
+/* Listens for page load
+ * Plays landing sting audio*/
+window.addEventListener("load", (event) => {
+  let audio = document.getElementById("landing-sting");
+  audio.play();
+});
+
+// ------------ /misc extras ------------ ||
+
+
+
+
+
+// ------------------------ MAIN GAME ------------------------ \\
+/** --- Run Game ---
+ * Runs game by calling all other needed functions in order
+ */
+function runGame(button) {
+  const playerChoice = playerShoot(button);     // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
+  const compChoice = compShoot();               // Takes computer choice and saves it to compChoice constant
+
+  moveIcons(playerChoice, compChoice);      // Moves the icons representing player's and computer's choices
+
+  console.log(actionReport(playerChoice, compChoice));    // Logs the action report narration to the console
+  
+  let winLose = calcWinner(playerChoice, compChoice);     // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
+
+  setTimeout(function () {                    // Wait 3 seconds then move icons back to initial positions
+    moveIcons(playerChoice, compChoice)
+  }, 3000);
+
+  if (winLose === 'draw') {
+    console.log("It's a draw!");        // Announces draw
+  } else if (winLose === 'win') {
+    console.log("Player wins!");        // Announces win
+    incrementWin();                     // Increments win counter
+  } else if (winLose === 'lose') {
+    console.log("Computer wins!");      // Announces loss
+    incrementLoss();                    // Increments loss counter
+  } else {
+    console.log("You done messed up A-a-ron!");     // Error announcer. Should never execute.
+  } 
+}
+
+// ------------------------------------------------------------ ||
 
 
   // JS code for bootstrap modal
