@@ -192,11 +192,42 @@ body {
 }
 
 /* --------- Rules Modal */
-#rules-modal-btn {
-    background-color: rgb(50, 0, 0);
+#rules-modal-btn,
+#close-modal-btn {
+    background-color: rgb(0, 0, 0) !important;
     border-color: rgb(0, 0, 0);
     color: #21d311;
+    border: 0;
     
+}
+
+#rules-modal-btn:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+#RulesModal {
+    background-color: rgb(0, 0, 0);
+}
+
+#rules-image {
+    height: 40rem;
+    width: 40rem;
+}
+
+.modal-content {
+    background-color: rgb(0, 0, 0);
+    border-width: 5px;
+    border-color: #21d311;
+
+}
+
+#btn-close {
+    color: #21d311 !important;
+}
+
+.modal-header {
+    border: 0;
 }
 
 /* --------- Media queries */

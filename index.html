@@ -81,30 +81,23 @@
                 <p class="scores">Comp Wins:<br><span id="loss">0</span></p>
             </div>
         </div>
-        <div class="row rules">
-            <div class="col-6 text-right"><span">
+        <div class="row rules align-items-center">
+            <div class="col-6 text-right"><span id="rules">
                     <!-- Button trigger modal -->
-                    <button type="button" id="rules-modal-btn" class="btn" data-bs-toggle="modal" data-bs-target="rules-modal-btn">
+                    <button type="button" class="btn btn-primary" id="rules-modal-btn" data-bs-toggle="modal" data-bs-target="#rulesModal">
                         Rules
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="RulesModal"
                         aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="rules-modal">Rules</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button id="close-modal-btn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                <div class="modal-body text-center">
+                                    <img id="rules-image" src="assets/images/spocksscissorsrules.jpg">
                                 </div>
                             </div>
                         </div>
