@@ -2,8 +2,12 @@
 let playerChoice = "";
 let compChoice = "";
 
+// ------------ Initialise Buttons ------------ \\
+// Listens for DOMContentLoaded
+// Identifies all buttons on the page and stores them in an array
+// Iterates through the array and adds an event listener to every button
+// Buttons now listen for a click event to call the runGame function, passing the button element as this
 
-// Adds event listener to buttons to call playerShoot on click, which returns the player's choice
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName("button");
   
@@ -13,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// ------------ /initialise buttons ------------ ||
+
 
 
 // ------------ Shoot Functions ------------ \\
