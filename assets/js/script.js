@@ -208,18 +208,26 @@ function actionReport(playerChoice, compChoice) {
   return (outcome[0]);
 }
 
-
+/** --- Move Icons ---
+ * 
+ */
 function moveIcons(playerChoice, computerChoice) {
   movePlayerIcon(playerChoice);
   moveCompIcon(computerChoice);
 }
 
+/** --- Move Player Icon ---
+ * 
+ */
 function movePlayerIcon(playerChoice) {
   const playerIconElement = document.querySelector(`[data-type="${playerChoice}"]`);
   playerIconElement.classList.toggle("player-icon-played");
   playerIconElement.classList.toggle(`${playerChoice}-choice`);
 }
 
+/** --- Move Comp Icon ---
+ * 
+ */
 function moveCompIcon(compChoice) {
   const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
   compIconElement.classList.toggle("comp-icon-played");
