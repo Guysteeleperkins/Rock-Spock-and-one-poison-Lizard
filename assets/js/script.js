@@ -183,8 +183,11 @@ function calcWinner(playerChoice, compChoice) {
 // ------------ /switchboard ------------ ||
 
 
+// ------------ Flavour Functions ------------ \\
+// Functions which are not essential to the game logic
+// These are to add flavour and interest to improve the game experience
 
-/** 
+/** --- Action Report ---
  * Takes playerChoice and compChoice as inputs. Searches the action array and returns the string that contains both inputs.
  */
 function actionReport(playerChoice, compChoice) {
@@ -205,7 +208,7 @@ function actionReport(playerChoice, compChoice) {
   return (outcome[0]);
 }
 
-
+// ------------ /flavour functions ------------
 
 window.addEventListener("load", (event) => {
   let audio = document.getElementById("landing-sting");
