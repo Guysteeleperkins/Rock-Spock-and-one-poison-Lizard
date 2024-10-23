@@ -209,15 +209,15 @@ function actionReport(playerChoice, compChoice) {
 }
 
 
-function moveIcons(userChoice, computerChoice) {
-  moveUserIcon(userChoice);
+function moveIcons(playerChoice, computerChoice) {
+  movePlayerIcon(playerChoice);
   moveCompIcon(computerChoice);
 }
 
-function moveUserIcon(userChoice) {
-  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
-  userIconElement.classList.toggle("user-icon-played");
-  userIconElement.classList.toggle(`${userChoice}-choice`);
+function movePlayerIcon(playerChoice) {
+  const playerIconElement = document.querySelector(`[data-type="${playerChoice}"]`);
+  playerIconElement.classList.toggle("player-icon-played");
+  playerIconElement.classList.toggle(`${playerChoice}-choice`);
 }
 
 function moveCompIcon(compChoice) {
