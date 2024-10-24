@@ -190,13 +190,15 @@ function compShoot() {
 function runGame(button) {
   const playerChoice = playerShoot(button);
   const compChoice = compShoot();
-
+  
+  
+  removeTransition(playerChoice, compChoice);
   moveIcons(playerChoice,compChoice);
 
   let winLose = calcWinner(playerChoice, compChoice);
 
   setTimeout(function() {
-                        toggleTransition(playerChoice, compChoice);
+                        addTransition(playerChoice, compChoice);
                         moveIcons(playerChoice,compChoice);
                         }, 3000);
 
@@ -234,23 +236,32 @@ function incrementLoss() {
 }
 
 
+/*
+*Functions for moving the icons about*
+*/
 
 
+function moveIcons(userChoice, computerChoice) {
+  moveUserIcon(userChoice);
+  moveCompIcon(computerChoice);
 
+}
 
-
-  function moveIcons(userChoice, computerChoice) {
-    moveUserIcon(userChoice);
-    moveCompIcon(computerChoice);
-
-  }
-
-function toggleTransition(userChoice, compChoice) {
+function addTransition(userChoice, compChoice) {
   const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
   const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
-  userIconElement.classList.toggle("no-transition");
-  compIconElement.classList.toggle("no-transition");
+  userIconElement.classList.add("no-transition");
+  compIconElement.classList.add("no-transition");
 }
+
+function removeTransition(userChoice, compChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  userIconElement.classList.remove("no-transition");
+  compIconElement.classList.remove("no-transition");
+}
+
+
   
   function moveUserIcon(userChoice) {
     const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
