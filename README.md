@@ -258,16 +258,14 @@ We also ran into styling issues on the deployed page after implementing the rule
 
 ## Testing
 ![Html test](./assets/images/htmlvalidator.png)
-![html validator](https://validator.w3.org/) <br>
-We used this for html.
+HTML validator - https://validator.w3.org/ <br>
 
-![css test](./assets/images/htmlvalidator.png)
-![css validator](https://jigsaw.w3.org/css-validator/) <br>
-we used this for Css
+![css test](./assets/images/cssvalidator.png)
+CSS validator - https://jigsaw.w3.org/css-validator/ <br>
 
-![Javascript test](./assets/images/htmlvalidator.png)
-![javascript validator](https://codebeautify.org/jsvalidate) <br>
-We used this for Javascript
+![Javascript test](./assets/images/javascriptvalidator.png)
+Javascript validator - https://codebeautify.org/jsvalidate <br>
+
 
 
 ## Credits
