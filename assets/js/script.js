@@ -295,90 +295,174 @@ function moveCompIcon(compChoice) {
 
 
 
-// ------------ Misc Extras ------------ \\
-// Other code not essential to the game logic
-// This is for code that improves the user experience but which doesn't belong in Flavour Functions
+// Get the player list element
+const characterList = document.getElementById('player-list');
+const opponentList = document.getElementById('opponent-list');
 
-/* Listens for page load
- * Plays landing sting audio*/
-window.addEventListener("load", (event) => {
-  let audio = document.getElementById("landing-sting");
-  audio.play();
+
+// Attach a click event listener to the list
+characterList.addEventListener('click', function (event) {
+  // Check if the clicked target is list item
+  if (event.target && event.target.nodeName === 'LI') {
+    // Get the string from list item
+    let characterText = event.target.innerText;
+    // Update the avatar display element 
+    updatePlayerAvatar(characterText);
+    //Move underline to current choice
+    style.textDecoration = "underline";
+  }
 });
 
-// ------------ /misc extras ------------ ||
+opponentList.addEventListener('click', function (event) {
+  // Check if the clicked target is list item
+  if (event.target && event.target.nodeName === 'LI') {
+    // Get the string from list item
+    let opponentText = event.target.innerText;
+    // Update the avatar display element 
+    updateOpponentAvatar(opponentText);
+    //Move underline to current choice
+  }
+});
 
-/**
- * Function to display win/lose/draw message
- */
-function displayResultMessage(result) {
-  const resultMessage = document.getElementById('result-message');
 
-  if (result === 'win') {
-    resultMessage.innerHTML = 'You Win!';
-    resultMessage.className = 'win'; // Apply win class
-  } else if (result === 'lose') {
-    resultMessage.innerHTML = 'You Lose!';
-    resultMessage.className = 'lose'; // Apply lose class
-  } else if (result === 'draw') {
-    resultMessage.innerHTML = 'Draw!';
-    resultMessage.className = 'draw'; // Apply Draw class
+function updatePlayerAvatar(characterText) {
+
+  document.getElementById('player-avatar').innerHTML = "";
+
+  // Use a switch statement to set different image HTML based on the selected player
+  switch (characterText) {
+    case 'Very Strong Pete':
+      document.getElementById('player-avatar').innerHTML = `<img src="assets/images/strongpete.jpg" alt="Strong Pete">`;
+      break;
+    case 'Less Strong but Still Very Strong Andrew':
+      document.getElementById('player-avatar').innerHTML = `<img src="assets/images/strongandrew.jpg" alt="Strong Andrew">`;
+      break;
+    case 'Cowboy Lizard':
+      document.getElementById('player-avatar').innerHTML = `<img src="assets/images/cowboylizard.webp" alt='Cowboy Lizard'>`;
+      break;
+    case 'Royce Coolidge':
+      document.getElementById('player-avatar').innerHTML = `<img src="assets/images/roycecoolidge.jpg" alt="Royce Coolidge">`;
+      break;
+    case 'Big Gun Guy':
+      document.getElementById('player-avatar').innerHTML = `<img src="assets/images/biggunguy.jpg" alt='Big Gun Guy'>`;
+      break;
+    default:
+      document.getElementById('player-avatar').innerHTML = "<p>No avatar available</p>";
+ 
   }
 
-  resultMessage.style.display = 'block'; // Show the message
+};
 
-  // Hide the message after 3 seconds
-  setTimeout(() => {
-    resultMessage.style.display = 'none';
-  }, 3000);
-}
+function updateOpponentAvatar(opponentText) {
+    document.getElementById('comp-avatar').innerHTML = "";
 
-
-
-
-// ------------------------ MAIN GAME ------------------------ \\
-/** --- Run Game ---
- * Runs game by calling all other needed functions in order
- */
-function runGame(button) {
-  const playerChoice = playerShoot(button); // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
-  const compChoice = compShoot(); // Takes computer choice and saves it to compChoice constant
-
-  removeTransition(playerChoice, compChoice);
-  moveIcons(playerChoice, compChoice); // Moves the icons representing player's and computer's choices
-
-  console.log(actionReport(playerChoice, compChoice)); // Logs the action report narration to the console
-
-  let winLose = calcWinner(playerChoice, compChoice); // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
-
-  setTimeout(function () {
-    addTransition(playerChoice, compChoice); // Wait 3 seconds then move icons back to initial positions
-    moveIcons(playerChoice, compChoice)
-  }, 3000);
-
-  if (winLose === 'draw') {
-    console.log("It's a draw!"); // Announces draw
-    displayResultMessage('draw'); // Show draw message
-  } else if (winLose === 'win') {
-    console.log("Player wins!"); // Announces win
-    incrementWin(); // Increments win counter
-    displayResultMessage('win'); // Show win message
-  } else if (winLose === 'lose') {
-    console.log("Computer wins!"); // Announces loss
-    incrementLoss(); // Increments loss counter
-    displayResultMessage('lose'); // Show lose message
-  } else {
-    console.log("You done messed up A-a-ron!"); // Error announcer. Should never execute.
+  switch (opponentText) {
+    case 'Slippery Phil':
+      document.getElementById('comp-avatar').innerHTML = `<img src="assets/images/slippyphil.jpg" alt="Slippery Phil">`;
+      break;
+    case 'Baron von FluffyPants':
+      document.getElementById('comp-avatar').innerHTML = `<img src="assets/images/baronfluffy.jpg" alt="Baron von FluffyPants">`;
+      break;
+    case 'The Spanner':
+      document.getElementById('comp-avatar').innerHTML = `<img src="assets/images/thespanner.jpg" alt='The Spanner'>`;
+      break;
+    case 'Sprock':
+      document.getElementById('comp-avatar').innerHTML = `<img src="assets/images/sprock.webp" alt="Sprock">`;
+      break;
+    case 'The man with half a soul':
+      document.getElementById('comp-avatar').innerHTML = `<img src="assets/images/halfsoul.jpg" alt='The man with half a soul'>`;
+      break;
+      default:
+        document.getElementById('comp-avatar').innerHTML = "<p>No avatar available</p>"
   }
 }
 
-// ------------------------------------------------------------ ||
 
 
-// JS code for bootstrap modal
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
+      // ------------ Misc Extras ------------ \\
+      // Other code not essential to the game logic
+      // This is for code that improves the user experience but which doesn't belong in Flavour Functions
 
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})
+      /* Listens for page load
+       * Plays landing sting audio*/
+      window.addEventListener("load", (event) => {
+        let audio = document.getElementById("landing-sting");
+        audio.play();
+      });
+
+      // ------------ /misc extras ------------ ||
+
+      /**
+       * Function to display win/lose/draw message
+       */
+      function displayResultMessage(result) {
+        const resultMessage = document.getElementById('result-message');
+
+        if (result === 'win') {
+          resultMessage.innerHTML = 'You Win!';
+          resultMessage.className = 'win'; // Apply win class
+        } else if (result === 'lose') {
+          resultMessage.innerHTML = 'You Lose!';
+          resultMessage.className = 'lose'; // Apply lose class
+        } else if (result === 'draw') {
+          resultMessage.innerHTML = 'Draw!';
+          resultMessage.className = 'draw'; // Apply Draw class
+        }
+
+        resultMessage.style.display = 'block'; // Show the message
+
+        // Hide the message after 3 seconds
+        setTimeout(() => {
+          resultMessage.style.display = 'none';
+        }, 3000);
+      }
+
+
+
+
+      // ------------------------ MAIN GAME ------------------------ \\
+      /** --- Run Game ---
+       * Runs game by calling all other needed functions in order
+       */
+      function runGame(button) {
+        const playerChoice = playerShoot(button); // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
+        const compChoice = compShoot(); // Takes computer choice and saves it to compChoice constant
+
+        removeTransition(playerChoice, compChoice);
+        moveIcons(playerChoice, compChoice); // Moves the icons representing player's and computer's choices
+
+        console.log(actionReport(playerChoice, compChoice)); // Logs the action report narration to the console
+
+        let winLose = calcWinner(playerChoice, compChoice); // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
+
+        setTimeout(function () {
+          addTransition(playerChoice, compChoice); // Wait 3 seconds then move icons back to initial positions
+          moveIcons(playerChoice, compChoice)
+        }, 3000);
+
+        if (winLose === 'draw') {
+          console.log("It's a draw!"); // Announces draw
+          displayResultMessage('draw'); // Show draw message
+        } else if (winLose === 'win') {
+          console.log("Player wins!"); // Announces win
+          incrementWin(); // Increments win counter
+          displayResultMessage('win'); // Show win message
+        } else if (winLose === 'lose') {
+          console.log("Computer wins!"); // Announces loss
+          incrementLoss(); // Increments loss counter
+          displayResultMessage('lose'); // Show lose message
+        } else {
+          console.log("You done messed up A-a-ron!"); // Error announcer. Should never execute.
+        }
+      }
+
+      // ------------------------------------------------------------ ||
+
+
+      // JS code for bootstrap modal
+      const myModal = document.getElementById('myModal')
+      const myInput = document.getElementById('myInput')
+
+      myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+      })
