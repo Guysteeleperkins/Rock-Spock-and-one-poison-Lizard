@@ -7,7 +7,8 @@
 <br>
 [Repository](https://github.com/Guysteeleperkins/Rock-Spock-and-one-poison-Lizard)
 
-Add an image of the finished site here. I like to use [amiresponsive](https://ui.dev/amiresponsive) to get an image of my site on all device sizes, and amiresponsive allows you to click links on the page and scroll, so each device can show a different element of your site.
+![amiresponsive](./assets/images/amiresponsive%20(1).png)
+https://ui.dev/amiresponsive?url=https://guysteeleperkins.github.io/Rock-Spock-and-one-poison-Lizard/
 
 ## Overview
 
@@ -19,6 +20,7 @@ Rock Spock and One Poison Lizard is an online game adaptation of Rock, Paper, Sc
 ## CONTENTS
 
 * [User Experience](#user-experience-ux)
+  * [Rules](#rules)
   * [User Stories](#user-stories)
 
 * [Design](#design)
@@ -38,17 +40,11 @@ Rock Spock and One Poison Lizard is an online game adaptation of Rock, Paper, Sc
 
 * [Deployment & Local Development](#deployment--local-development)
   * [Deployment](#deployment)
-  * [Local Development](#local-development)
-    * [How to Fork](#how-to-fork)
-    * [How to Clone](#how-to-clone)
+
 
 * [Testing](#testing)
 
 * [Credits](#credits)
-  * [Code Used](#code-used)
-  * [Content](#content)
-  * [Media](#media)
-  * [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -202,6 +198,7 @@ Rock Spock and One Poison Lizard is an online game adaptation of Rock, Paper, Sc
 We went for a classic arcade feel with the color schemes.
 
 ### Typography
+![type style](./assets/images/cosmicalienfont.png)
 
 We selected fonts to compliment the arcade style.
 
@@ -210,7 +207,10 @@ We selected fonts to compliment the arcade style.
 We found fun pictures of characters to use within an avatar selector.
 
 ### Wireframes
+![wireframe page 1](./assets/images/wireframe1.png)
+![wireframe page 2](./assets/images/wireframe2.png)
 
+We used balsamic to create the wireframes.
 
 ## Features
 
@@ -257,24 +257,29 @@ code which resulted in buttons not working. This was a fast fix as we all had a 
 We also ran into styling issues on the deployed page after implementing the rules modal. This was fixed by debugging an extra div tag that had turned up in the middle of the HTML.
 
 ## Testing
+![Html test](./assets/images/htmlvalidator.png)
+![html validator](https://validator.w3.org/) <br>
+We used this for html.
+
+![css test](./assets/images/htmlvalidator.png)
+![css validator](https://jigsaw.w3.org/css-validator/) <br>
+we used this for Css
+
+![Javascript test](./assets/images/htmlvalidator.png)
+![javascript validator](https://codebeautify.org/jsvalidate) <br>
+We used this for Javascript
 
 
 ## Credits
 
+https://coolors.co/ <br>
+https://chatgpt.com/ <br>
+https://getbootstrap.com/ <br>
+https://unsplash.com/ <br>
+https://ui.dev/amiresponsive?url=https://guysteeleperkins.github.io/Rock-Spock-and-one-poison-Lizard/ <br>
+https://www.google.com/ <br>
+https://miro.com/app/dashboard/ <br>
+https://fonts.google.com/ <br>
+https://www.dafont.com/cosmic-alien.font
 
 
-### Code Used
-
-If you have used some code in your project that you didn't write, this is the place to make note of it. Credit the author of the code and if possible a link to where you found the code. You could also add in a brief description of what the code does, or what you are using it for here.
-
-### Content
-
-Who wrote the content for the website? Was it yourself - or have you made the site for someone and they specified what the site was to say? This is the best place to put this information.
-
-###  Media
-
-If you have used any media on your site (images, audio, video etc) you can credit them here. I like to link back to the source where I found the media, and include where on the site the image is used.
-  
-###  Acknowledgments
-
-If someone helped you out during your project, you can acknowledge them here! For example someone may have taken the time to help you on slack with a problem. Pop a little thank you here with a note of what they helped you with (I like to try and link back to their GitHub or Linked In account too). This is also a great place to thank your mentor and tutor support if you used them.
