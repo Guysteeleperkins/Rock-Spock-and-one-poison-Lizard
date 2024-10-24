@@ -1,3 +1,23 @@
+// Adds a screen bootup effect when the page is first loaded
+
+window.onload = function () {
+  const bootScreen = document.getElementById('boot-screen');
+  const gameContainer = document.getElementById('game-container');
+  const body = document.body;
+
+
+  setTimeout(() => {
+
+    body.style.backgroundColor = 'black'; // Change the body background to white once the expansion is done
+
+    bootScreen.style.animation = "fadeOut 1s forwards"; // Fade out the boot screen after the expansion
+    setTimeout(() => {
+      bootScreen.style.display = 'none';
+      gameContainer.style.display = 'block';
+    }, 1000); // Wait for the fade-out animation to complete
+  }, 3000); // This should match the expandLine animation duration
+};
+
 // ------------ Initialise Buttons ------------ \\
 // Listens for DOMContentLoaded
 // Identifies all buttons on the page and stores them in an array
@@ -6,7 +26,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.getElementsByTagName("button");
-  
+
   for (let button of buttons) {
     button.addEventListener("click", function () {
       runGame(this);
@@ -295,21 +315,21 @@ function displayResultMessage(result) {
   const resultMessage = document.getElementById('result-message');
 
   if (result === 'win') {
-      resultMessage.innerHTML = 'You Win!';
-      resultMessage.className = 'win'; // Apply win class
+    resultMessage.innerHTML = 'You Win!';
+    resultMessage.className = 'win'; // Apply win class
   } else if (result === 'lose') {
-      resultMessage.innerHTML = 'You Lose!';
-      resultMessage.className = 'lose'; // Apply lose class
+    resultMessage.innerHTML = 'You Lose!';
+    resultMessage.className = 'lose'; // Apply lose class
   } else if (result === 'draw') {
-      resultMessage.innerHTML = 'Draw!';
-      resultMessage.className = 'draw'; // Apply Draw class
+    resultMessage.innerHTML = 'Draw!';
+    resultMessage.className = 'draw'; // Apply Draw class
   }
-  
+
   resultMessage.style.display = 'block'; // Show the message
 
   // Hide the message after 3 seconds
   setTimeout(() => {
-      resultMessage.style.display = 'none';
+    resultMessage.style.display = 'none';
   }, 3000);
 }
 
@@ -321,41 +341,41 @@ function displayResultMessage(result) {
  * Runs game by calling all other needed functions in order
  */
 function runGame(button) {
-  const playerChoice = playerShoot(button);     // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
-  const compChoice = compShoot();               // Takes computer choice and saves it to compChoice constant
+  const playerChoice = playerShoot(button); // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
+  const compChoice = compShoot(); // Takes computer choice and saves it to compChoice constant
 
   removeTransition(playerChoice, compChoice);
-  moveIcons(playerChoice, compChoice);      // Moves the icons representing player's and computer's choices
+  moveIcons(playerChoice, compChoice); // Moves the icons representing player's and computer's choices
 
-  console.log(actionReport(playerChoice, compChoice));    // Logs the action report narration to the console
-  
-  let winLose = calcWinner(playerChoice, compChoice);     // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
+  console.log(actionReport(playerChoice, compChoice)); // Logs the action report narration to the console
 
-  setTimeout(function () {    
-    addTransition(playerChoice, compChoice);                // Wait 3 seconds then move icons back to initial positions
+  let winLose = calcWinner(playerChoice, compChoice); // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
+
+  setTimeout(function () {
+    addTransition(playerChoice, compChoice); // Wait 3 seconds then move icons back to initial positions
     moveIcons(playerChoice, compChoice)
   }, 3000);
 
   if (winLose === 'draw') {
-    console.log("It's a draw!");        // Announces draw
-    displayResultMessage('draw');       // Show draw message
+    console.log("It's a draw!"); // Announces draw
+    displayResultMessage('draw'); // Show draw message
   } else if (winLose === 'win') {
-    console.log("Player wins!");        // Announces win
-    incrementWin();                     // Increments win counter
-    displayResultMessage('win');        // Show win message
+    console.log("Player wins!"); // Announces win
+    incrementWin(); // Increments win counter
+    displayResultMessage('win'); // Show win message
   } else if (winLose === 'lose') {
-    console.log("Computer wins!");      // Announces loss
-    incrementLoss();                    // Increments loss counter
-    displayResultMessage('lose');       // Show lose message
+    console.log("Computer wins!"); // Announces loss
+    incrementLoss(); // Increments loss counter
+    displayResultMessage('lose'); // Show lose message
   } else {
-    console.log("You done messed up A-a-ron!");     // Error announcer. Should never execute.
-  } 
+    console.log("You done messed up A-a-ron!"); // Error announcer. Should never execute.
+  }
 }
 
 // ------------------------------------------------------------ ||
 
 
-  // JS code for bootstrap modal
+// JS code for bootstrap modal
 const myModal = document.getElementById('myModal')
 const myInput = document.getElementById('myInput')
 
