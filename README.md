@@ -1,23 +1,17 @@
 
-![Logo](put url link here - delete this text)
+![Logo](./assets/images/title.png)
 
-# Spock and Roll
+# Rock Spock And One Poison Lizard
 
-[LiveSite](put url link here - delete this text)
-[Repository](put url link here - delete this text)
+[LiveSite](https://guysteeleperkins.github.io/Rock-Spock-and-one-poison-Lizard/)
+<br>
+[Repository](https://github.com/Guysteeleperkins/Rock-Spock-and-one-poison-Lizard)
 
 Add an image of the finished site here. I like to use [amiresponsive](https://ui.dev/amiresponsive) to get an image of my site on all device sizes, and amiresponsive allows you to click links on the page and scroll, so each device can show a different element of your site.
 
 ## Overview
-""
-Add a Blurb about the site here, what does it do, why did you build it?
 
-Spock and Roll is an online game adaptation of Rock, Paper, Scissors that adds two more elements "Lizard" and "Spock" inspired from the Tv series - The Big Bang Theory. Users can play against a computer and the computer choice and outcome of the game will be visible to the user. This creates a fun interactive game for the player.
-
-## Target Audience
-""
-
-👩🏻‍💻 View an example of this section [here](https://github.com/kera-cudmore/Bully-Book-Club#bully-book-club-website)
+Rock Spock and One Poison Lizard is an online game adaptation of Rock, Paper, Scissors that adds two more elements "Lizard" and "Spock" inspired from the Tv series - The Big Bang Theory. Users can play against a computer and the computer choice and outcome of the game will be visible to the user. This creates a fun interactive game for the player.
 
 
 ---
@@ -60,11 +54,9 @@ Spock and Roll is an online game adaptation of Rock, Paper, Scissors that adds t
 
 ## User Experience (UX)
 
-👩🏻‍💻 View an example of a completed user experience section [here](https://github.com/kera-cudmore/Bully-Book-Club#user-experience-ux)
-
-Spock and Roll is an online game adaptation of Rock, Paper, Scissors that adds two more elements "Lizard" and "Spock" inspired from the Tv series - The Big Bang Theory. Users can play against a computer and the computer choice and outcome of the game will be visible to the user. This creates a fun interactive game for the player.
 
 ### Rules
+![Image describing the rules](./assets/images/spocksscissorsrules.jpg)
 - Scissors cuts Paper
 - Paper covers Rock
 - Rock crushes Lizard
@@ -135,25 +127,26 @@ Spock and Roll is an online game adaptation of Rock, Paper, Scissors that adds t
 ### Should Have User Stories
 ---
 
-### 1. User Story: Play Again Option
-**As a user**, I want an easy way to play another round after a match ends, so that I can continue playing without refreshing the page.
-
-#### Acceptance Criteria:
-- After each round, a “Play Again” button appears.
-- Clicking the button resets the game to the initial selection phase without resetting the total score.
-
-### 2. User Story: Picture Feedback
+### 1. User Story: Picture Feedback
 **As a user**, I want to see visual feedback when I make my selection, so that I know the game registered my input.
 
 #### Acceptance Criteria:
 - After selecting an option, a picture represents the choice that has been made.
 - The computer’s choice is also accompanied by visual feedback.
 
+### 2. User Story: Play Again 
+**As a user**, I want an easy way to play another round after a match ends, so that I can continue playing without refreshing the page.
+
+#### Acceptance Criteria:
+- After each round the buttons automatically reset.
+- After making a choice the buttons return to their original positions ready to play again.
+
 ### 3. User Story: Pick Player
 **As a user**, I want to be able to pick a character that I can play as from a list of characters.
 
 #### Acceptance Criteria:
 - The player is able to choose an avatar from a list of characters.
+
 
 ---
 
@@ -199,91 +192,76 @@ Spock and Roll is an online game adaptation of Rock, Paper, Scissors that adds t
 
 ## Design
 
-👩🏻‍💻 View an example of a completed design section [here](https://github.com/kera-cudmore/earth-day-hackathon-2022#Design)
 
 ### Colour Scheme
 
+![Color pallet choice 1](./assets/images/color1.png)
+![Color pallet choice 2](./assets/images/color2.png)
+![Color pallet choice 3](./assets/images/color3.png)
+
+We went for a classic arcade feel with the color schemes.
 
 ### Typography
 
+We selected fonts to compliment the arcade style.
 
 ### Imagery
 
-Use this section to explain what sort of imagery you plan to use through your site.
+We found fun pictures of characters to use within an avatar selector.
 
 ### Wireframes
-
-Add the images or links for your wireframes here.
 
 
 ## Features
 
-This section can be used to explain what pages your site is made up of.
-
 
 ### Future Implementations
 
-What features would you like to implement in the future on your site? Would you like to add more pages, or create login functionality? Add these plans here.
+The future features we want to add are;
+- Choose a best of "number of rounds" mode eg best of 3, best of 5.
+- Health bars for the chosen characters
+- Faster loading times
+- Smoother transitions
+- Add a picture for the choices to appear
+- Add a message for the choices made when winning or losing
 
 ### Accessibility
 
-Be an amazing developer and get used to thinking about accessibility in all of your projects!
-
-This is the place to make a note of anything you have done with accessibility in mind. Some examples include:
-
-Have you used icons and added aria-labels to enable screen readers to understand these?
-Have you ensured your site meets the minimum contrast requirements?
-Have you chosen fonts that are dyslexia/accessible friendly?
+We have implemented aria labels and image descriptions. Lighthouse dev tool shows a score of 88 highlighting that buttons
+don't have accessibility conent. This would be a quick fix but run out of time due to deadline.
 
 ## Technologies Used
 
-👩🏻‍💻 View an example of a completed Technologies Used section [here](https://github.com/kera-cudmore/Bully-Book-Club#Technologies-Used)
 
 ### Languages Used
 
-Make a note here of all the languages used in creating your project. For the first project this will most likely just be HTML & CSS.
+For this project we have used HTML, CSS and Javascript.
 
 ### Frameworks, Libraries & Programs Used
 
-Add any frameworks, libraries or programs used while creating your project.
+We have used the following;
+- Github
+- Gitpod
+- Slack
+- Bootstrap
+- Google Meet 
 
-Make sure to include things like git, GitHub, the program used to make your wireframes, any programs used to compress your images, did you use a CSS framework like Bootstrap? If so add it here (add the version used).
+## Deployment
 
-A great tip for this section is to include them as you use them, that way you won't forget what you ended up using when you get to the end of your project.
 
-## Deployment & Local Development
+### Deployment & Development
 
-👩🏻‍💻 View an example of a completed Deployment & Local Development section [here](https://github.com/kera-cudmore/TheQuizArms#Deployment)
-
-### Deployment
-
-Include instructions here on how to deploy your project. For your first project you will most likely be using GitHub Pages.
-
-### Local Development
-
-The local development section gives instructions on how someone else could make a copy of your project to play with on their local machine. This section will get more complex in the later projects, and can be a great reference to yourself if you forget how to do this.
-
-#### How to Fork
-
-Place instructions on how to fork your project here.
-
-#### How to Clone
-
-Place instructions on how to clone your project here.
+We have Deployed the project using Github. The team has had practice deploying from previous projects so the deployment went smoothly.<br>
+For development we used Gitpod and had 3 occasions where we had issues after merging branches with the main. These included overwriting of Javascript
+code which resulted in buttons not working. This was a fast fix as we all had a backup before the merge. <br>
+We also ran into styling issues on the deployed page after implementing the rules modal. This was fixed by debugging an extra div tag that had turned up in the middle of the HTML.
 
 ## Testing
 
-Start as you mean to go on - and get used to writing a TESTING.md file from the very first project!
-
-Testing requirements aren't massive for your first project, however if you start using a TESTING.md file from your first project you will thank yourself later when completing your later projects, which will contain much more information.
-  
-Use this part of the README to link to your TESTING.md file - you can view the example TESTING.md file [here](milestone1-testing.md)
 
 ## Credits
 
-👩🏻‍💻 View an example of a completed Credits section [here](https://github.com/kera-cudmore/BookWorm#Credits)
 
-The Credits section is where you can credit all the people and sources you used throughout your project.
 
 ### Code Used
 
