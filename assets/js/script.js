@@ -236,20 +236,29 @@ function actionReport(playerChoice, compChoice) {
 function moveIcons(playerChoice, computerChoice) {
   movePlayerIcon(playerChoice);
   moveCompIcon(computerChoice);
+}
+
+function addTransition(userChoice, compChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  userIconElement.classList.add("no-transition");
+  compIconElement.classList.add("no-transition");
+}
+
+function removeTransition(userChoice, compChoice) {
+  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
+  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
+  userIconElement.classList.remove("no-transition");
+  compIconElement.classList.remove("no-transition");
 
 }
 
-function toggleTransition(userChoice, compChoice) {
-  const userIconElement = document.querySelector(`[data-type="${userChoice}"]`);
-  const compIconElement = document.querySelector(`[data-type="comp-${compChoice}"]`);
-  userIconElement.classList.toggle("no-transition");
-  compIconElement.classList.toggle("no-transition");
-}/** --- Move Player Icon ---
+/** --- Move Player Icon ---
  * 
  */
 function movePlayerIcon(playerChoice) {
   const playerIconElement = document.querySelector(`[data-type="${playerChoice}"]`);
-  playerIconElement.classList.toggle("player-icon-played");
+  playerIconElement.classList.toggle("user-icon-played");
   playerIconElement.classList.toggle(`${playerChoice}-choice`);
 }
 
@@ -291,13 +300,15 @@ function runGame(button) {
   const playerChoice = playerShoot(button);     // Takes player choice from the clicked button using its data-type and saves it to playerChoice constant
   const compChoice = compShoot();               // Takes computer choice and saves it to compChoice constant
 
+  removeTransition(playerChoice, compChoice);
   moveIcons(playerChoice, compChoice);      // Moves the icons representing player's and computer's choices
 
   console.log(actionReport(playerChoice, compChoice));    // Logs the action report narration to the console
   
   let winLose = calcWinner(playerChoice, compChoice);     // Takes playerChoice and compChoice as inputs, calculates the match result and saves the output to winLose
 
-  setTimeout(function () {                    // Wait 3 seconds then move icons back to initial positions
+  setTimeout(function () {    
+    addTransition(playerChoice, compChoice);                // Wait 3 seconds then move icons back to initial positions
     moveIcons(playerChoice, compChoice)
   }, 3000);
 
