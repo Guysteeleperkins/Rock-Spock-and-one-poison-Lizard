@@ -61,20 +61,6 @@ body {
     background-color: rgba(0, 255, 42, 0.1);
 }
 
-/* #choose-player-btn {
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 255, 42, 0.1);
-} */
-
-/* #player-avatar {
-        position: relative;
-        margin-bottom: 0px;
-        border-radius: 0;
-} */
-
 
 .game-table {
     min-height: 60vh;
@@ -86,7 +72,6 @@ body {
 }
 
 /* Win Lose Display in game area */
-
 
 #result-message {
     font-size: 2rem;
