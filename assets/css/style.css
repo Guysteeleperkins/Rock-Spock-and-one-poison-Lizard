@@ -287,7 +287,8 @@ body {
 
 #players-modal-btn,
 #rules-modal-btn,
-#close-modal-btn {
+#close-modal-btn,
+#close-modal-btn-1 {
     background-color: rgb(0, 0, 0) !important;
     border-color: rgb(0, 0, 0);
     color: #21d311;

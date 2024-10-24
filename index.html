@@ -13,7 +13,7 @@
 
 
     <!-- Favicon -->
-    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
 
     <!-- Css -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -24,8 +24,6 @@
 <body>
     <audio src="assets/audio/stinger-2021-08-17_-_8_Bit_Nostalgia_-_www.FesliyanStudios.com.mp3"
         id="landing-sting"></audio>
-
-    <body></body>
     <div id="boot-screen">
         <div id="boot-line"></div>
     </div>
@@ -95,70 +93,68 @@
         </div>
     </div>
     <div class="row rules align-items-center">
-        <div class="col-6 text-right"><span id="rules">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" id="rules-modal-btn" data-bs-toggle="modal"
-                    data-bs-target="#rulesModal">
-                    Rules
-                </button>
+        <div class="col-6 text-right" id="rules">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" id="rules-modal-btn" data-bs-toggle="modal"
+                data-bs-target="#rulesModal">
+                Rules
+            </button>
 
-                <!-- Modal -->
-                <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="RulesModal" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button id="close-modal-btn" type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">Close</button>
-                            </div>
-                            <div class="modal-body text-center">
-                                <img id="rules-image" src="assets/images/spocksscissorsrules.jpg">
-                            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="rulesModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button id="close-modal-btn" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
                         </div>
-                    </div>
-                </div>
-            </span></div>
-         
-	  <div class="col-6 text-left"><span id="choose-players">
-        <button type="button" class="btn btn-primary" id="players-modal-btn" data-bs-toggle="modal"
-            data-bs-target="#playersModal">
-            Choose Players
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="playersModal" tabindex="-1" aria-labelledby="Players Modal"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button id="close-modal-btn" type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <h4 class="select-list-header">Choose Player:</h4>
-                        <hr>
-                        <ul id="player-list" class="select-list">
-                            <li>Very Strong Pete</li>
-                            <li>Less Strong but Still Very Strong Andrew</li>
-                            <li>Cowboy Lizard</li>
-                            <li>Royce Coolidge</li>
-                            <li>Big Gun Guy</li>
-                        </ul>
-                        <br>
-                        <h4 class="select-list-header">Choose Opponent:</h4>
-                        <hr>
-                        <ul id="opponent-list" class="select-list">
-                            <li>Slippery Phil</li>
-                            <li>Baron von FluffyPants</li>
-                            <li>The Spanner</li>
-                            <li>Sprock</li>
-                            <li>The man with half a soul</li>
-                        </ul>
+                        <div class="modal-body text-center">
+                            <img alt="rules picture" id="rules-image" src="assets/images/spocksscissorsrules.jpg">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </span></div>
-    </div>
+
+        <div class="col-6 text-left" id="choose-players">
+            <button type="button" class="btn btn-primary" id="players-modal-btn" data-bs-toggle="modal"
+                data-bs-target="#playersModal">
+                Choose Players
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="playersModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button id="close-modal-btn-1" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <h4 class="select-list-header">Choose Player:</h4>
+                            <hr>
+                            <ul id="player-list" class="select-list">
+                                <li>Very Strong Pete</li>
+                                <li>Less Strong but Still Very Strong Andrew</li>
+                                <li>Cowboy Lizard</li>
+                                <li>Royce Coolidge</li>
+                                <li>Big Gun Guy</li>
+                            </ul>
+                            <br>
+                            <h4 class="select-list-header">Choose Opponent:</h4>
+                            <hr>
+                            <ul id="opponent-list" class="select-list">
+                                <li>Slippery Phil</li>
+                                <li>Baron von FluffyPants</li>
+                                <li>The Spanner</li>
+                                <li>Sprock</li>
+                                <li>The man with half a soul</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
