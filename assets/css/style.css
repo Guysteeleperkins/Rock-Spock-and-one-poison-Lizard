@@ -9,7 +9,6 @@
 
 body {
     background-color: rgb(0, 0, 0);
-    /* background: url(../images/galaxy.jpg) no-repeat center center/cover; */
     font-family: "Space Mono", sans-serif;
     font-weight: 100;
     color: #21d311;
@@ -237,7 +236,6 @@ body {
     color: red;
 }
 
-/* .btn--red:active, */
 .btn--red:hover,
 .lizard-choice {
     background-color: darkred;
@@ -249,7 +247,6 @@ body {
     color: green;
 }
 
-/* .btn--green:active, */
 .btn--green:hover,
 .rock-choice {
     background-color: darkgreen;
@@ -261,7 +258,6 @@ body {
     color: #a7189f;
 }
 
-/* .btn--purple:active, */
 .btn--purple:hover,
 .spock-choice {
     background-color: #a7189f;
