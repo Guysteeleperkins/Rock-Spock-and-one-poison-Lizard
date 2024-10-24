@@ -1,3 +1,23 @@
+// Adds a screen bootup effect when the page is first loaded
+
+window.onload = function () {
+  const bootScreen = document.getElementById('boot-screen');
+  const gameContainer = document.getElementById('game-container');
+  const body = document.body;
+
+
+  setTimeout(() => {
+
+    body.style.backgroundColor = 'black'; // Change the body background to white once the expansion is done
+
+    bootScreen.style.animation = "fadeOut 1s forwards"; // Fade out the boot screen after the expansion
+    setTimeout(() => {
+      bootScreen.style.display = 'none';
+      gameContainer.style.display = 'block';
+    }, 1000); // Wait for the fade-out animation to complete
+  }, 3000); // This should match the expandLine animation duration
+};
+
 // ------------ Initialise Buttons ------------ \\
 // Listens for DOMContentLoaded
 // Identifies all buttons on the page and stores them in an array

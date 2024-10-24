@@ -24,6 +24,65 @@ body {
     transition: none !important;
 }
 
+/* Opening screen animation */
+#boot-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    /* Black background stays */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#boot-line {
+    background-color: black;
+    /* White background for the expanded section */
+    border: 2px solid limegreen;
+    /* Green border around the expanding line */
+    width: 0px;
+    height: 0px;
+    animation: expandLine 3s forwards;
+}
+
+#game-container {
+    display: none;
+    text-align: center;
+    background-color: black;
+    /* White background for the game area */
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes expandLine {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        width: 100%;
+        height: 0;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 /* --------- Heading */
 
 .arcade-header {
@@ -79,26 +138,28 @@ body {
     font-family: "Space Mono", sans-serif;
     padding: 20px;
     border-radius: 10px;
-    display: none; /* Hidden by default */
+    display: none;
+    /* Hidden by default */
     position: absolute;
     width: 100%;
-    top: 90%; /* Vertically center */
+    top: 90%;
+    /* Vertically center */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-  }
-  
-  .win {
-    color: green;
-  }
-  
-  .lose {
-    color: red;
-  }
+}
 
-  .draw {
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+.draw {
     color: blue;
-  }
+}
 
 
 .score-area {
@@ -354,24 +415,24 @@ body {
         max-height: 20vh;
     }
 
-@media (max-width: 320px) {
+    @media (max-width: 320px) {
 
 
-    .comp-icon-played {
-        font-size: 3rem;
-        top: 100%;
-        left: 55%;
-        height: 6rem;
-        width: 6rem;
+        .comp-icon-played {
+            font-size: 3rem;
+            top: 100%;
+            left: 55%;
+            height: 6rem;
+            width: 6rem;
+        }
+
+        .user-icon-played {
+            font-size: 3rem;
+            top: -190%;
+            left: 25%;
+            height: 6rem;
+            width: 6rem;
+        }
+
     }
-
-    .user-icon-played {
-        font-size: 3rem;
-        top: -190%;
-        left: 25%;
-        height: 6rem;
-        width: 6rem;
-    }
-
-}
 }
